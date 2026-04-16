@@ -577,6 +577,98 @@
       .check-row.with-dest .check-amt { grid-column: 2 / 3; }
     }
 
+    /* --------- Fee-schedule integrated flow (§8) --------- */
+    .fee-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 760px;
+      margin: 48px auto;
+    }
+    .fee-step {
+      background: var(--dark-card);
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      padding: 26px 28px;
+      width: 100%;
+    }
+    .light .fee-step { background: var(--light-card); border-color: var(--gold-ink); }
+    .fee-step .fs-lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .light .fee-step .fs-lbl { color: var(--gold-ink); }
+    .fee-step h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+    .dark .fee-step h4 { color: #E8E6E0; }
+    .light .fee-step h4 { color: #1A1A1A; }
+    .fee-step .fs-body {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .dark .fee-step .fs-body { color: #C7C5BE; }
+    .light .fee-step .fs-body { color: #3A3832; }
+    .fee-arrow {
+      align-self: center;
+      color: var(--gold);
+      font-size: 18px;
+      line-height: 1;
+      padding: 14px 0;
+    }
+    .light .fee-arrow { color: var(--gold-ink); }
+    .fee-removed {
+      margin-top: 32px;
+      padding: 24px;
+      border-left: 2px solid var(--red);
+      background: rgba(155, 68, 68, 0.06);
+      border-radius: 0 2px 2px 0;
+    }
+    .light .fee-removed { background: rgba(92, 32, 32, 0.04); border-left-color: var(--red-deep); }
+    .fee-removed-lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .dark .fee-removed-lbl { color: var(--red); }
+    .light .fee-removed-lbl { color: var(--red-deep); }
+    .fee-removed-list {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .fee-removed-list li {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 15px;
+      line-height: 1.5;
+      padding-left: 22px;
+      position: relative;
+    }
+    .fee-removed-list li::before {
+      content: 'X';
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      position: absolute;
+      left: 0;
+      top: 4px;
+      color: var(--red);
+    }
+    .light .fee-removed-list li::before { color: var(--red-deep); }
+    .dark .fee-removed-list li { color: #C7C5BE; }
+    .light .fee-removed-list li { color: #3A3832; }
+
     /* --------- Captive cards (§7) --------- */
     .captive-cards {
       display: grid;
@@ -1769,6 +1861,101 @@
           <div class="num">25</div>
           <div class="lbl">Ambulatory surgery centers</div>
           <div class="desc">Physician-owned ASCs targeted for the cohort once the P&amp;C cell activates.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 8: THE BESPOKE FEE SCHEDULES
+       ========================================================= -->
+  <section class="sec dark">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">VIII.</span> The Bespoke Fee Schedules</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">Direct contracting integrated<br>into the health plan.</h2>
+      <p class="lede">
+        Bespoke fee schedules written by Dutch. Two prior direct contracting exits, two decades of operating history. The schedules are loaded onto existing ASO platforms at Aetna, UMR, and Meritain. The employer&#39;s self-funded plan pays the physician at the contracted rate. No separate network. No PPO lease. No new sales team. The carrier ASO is the rails. The fee schedule is the contract. The captive holds the float.
+      </p>
+
+      <div class="fee-flow">
+        <div class="fee-step">
+          <span class="fs-lbl">Origin</span>
+          <h4>Self-funded employer</h4>
+          <p class="fs-body">The physician-owned hospital or practice funds the health plan directly. Premium dollars enter the captive cell and stay there.</p>
+        </div>
+        <div class="fee-arrow">&darr;</div>
+        <div class="fee-step">
+          <span class="fs-lbl">Layer</span>
+          <h4>MedMerge contracting layer</h4>
+          <p class="fs-body">Bespoke fee schedules written in-house, loaded onto the ASO. Aetna, UMR, or Meritain adjudicates the claim against the contracted rate, not a network rental rate.</p>
+        </div>
+        <div class="fee-arrow">&darr;</div>
+        <div class="fee-step">
+          <span class="fs-lbl">Destination</span>
+          <h4>Physician or facility, paid directly</h4>
+          <p class="fs-body">Paid at the contracted rate. Paid faster. Paid without denial arbitrage. Paid by a plan whose surplus accrues to the physicians who own it.</p>
+        </div>
+
+        <div class="fee-removed">
+          <span class="fee-removed-lbl">What disappears</span>
+          <ul class="fee-removed-list">
+            <li>PPO lease and network access fee</li>
+            <li>Carrier margin on plan premium</li>
+            <li>Broker commission on the renewal</li>
+            <li>The annual renegotiation cycle that depends on a carrier knowing more than you do</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stat-grid cols-3 mt-48">
+        <div class="stat">
+          <div class="num">0</div>
+          <div class="lbl">Network access fees</div>
+          <div class="desc">No PPO lease, no rental network margin, no surcharge between the employer and the physician.</div>
+        </div>
+        <div class="stat">
+          <div class="num">&lt; 14d</div>
+          <div class="lbl">Typical payment cycle</div>
+          <div class="desc">Paid directly from the self-funded plan, not through a carrier claims queue. No denial arbitrage.</div>
+        </div>
+        <div class="stat">
+          <div class="num">0</div>
+          <div class="lbl">New sales teams required</div>
+          <div class="desc">Practices plug into the contracting infrastructure. They keep seeing patients. MedMerge handles the contracts.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 9: THE DOMESTIC NETWORK
+       ========================================================= -->
+  <section class="sec light">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">IX.</span> The Domestic Network</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">Your employees,<br>in your facility,<br>with no friction.</h2>
+      <p class="lede">
+        Two network concepts compound the captive&#39;s economics. The Domestic Network keeps utilization inside the facilities you already own. The Friends and Family Network extends preferred access across the captive collective. Both are enabled by the captive structure. Neither is available to practices outside it.
+      </p>
+
+      <div class="compare">
+        <div class="col">
+          <span class="tag">Network 01</span>
+          <h3 style="font-size:30px; margin-bottom: 14px;">Domestic Network</h3>
+          <p style="font-size:14px; letter-spacing: 0.2em; text-transform: uppercase; font-family: 'DM Mono', monospace; color: var(--gold-ink); margin-bottom: 8px;">$0 out of pocket</p>
+          <p style="font-size:15px; line-height:1.6;">
+            Employees of a physician-owned hospital receive care at their own facilities with no copays, deductibles, or co-insurance. Volume stays inside. Less than 5 percent of hospitals have implemented this. MedMerge makes it a default.
+          </p>
+        </div>
+        <div class="col">
+          <span class="tag">Network 02</span>
+          <h3 style="font-size:30px; margin-bottom: 14px;">Friends &amp; Family Network</h3>
+          <p style="font-size:14px; letter-spacing: 0.2em; text-transform: uppercase; font-family: 'DM Mono', monospace; color: var(--gold-ink); margin-bottom: 8px;">Preferred rates across the collective</p>
+          <p style="font-size:15px; line-height:1.6;">
+            Members inside the captive collective access top-tier physicians and facilities at preferred rates. Every new practice that joins expands the available network for every other member. The captive creates network effects across its own balance sheet.
+          </p>
         </div>
       </div>
     </div>
