@@ -577,6 +577,125 @@
       .check-row.with-dest .check-amt { grid-column: 2 / 3; }
     }
 
+    /* --------- Entity stack diagram (§5, mobile-first) --------- */
+    .entity-flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      margin: 48px 0;
+    }
+    .ef-node {
+      width: 100%;
+      max-width: 520px;
+      background: var(--light-card);
+      border: 1px solid var(--gold-ink);
+      border-radius: 2px;
+      padding: 22px 26px;
+      text-align: left;
+    }
+    .dark .ef-node { background: var(--dark-card); border-color: var(--gold); }
+    .ef-node .ef-lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-ink);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .dark .ef-node .ef-lbl { color: var(--gold); }
+    .ef-node h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+    .light .ef-node h4 { color: #1A1A1A; }
+    .dark  .ef-node h4 { color: #E8E6E0; }
+    .ef-node .ef-note {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .light .ef-node .ef-note { color: var(--muted-light); }
+    .dark  .ef-node .ef-note { color: #8A8880; }
+    .ef-arrow {
+      color: var(--gold-ink);
+      font-size: 18px;
+      line-height: 1;
+      padding: 14px 0;
+    }
+    .dark .ef-arrow { color: var(--gold); }
+    .ef-children {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      width: 100%;
+      max-width: 980px;
+      margin-top: 6px;
+    }
+    .ef-children .ef-node { max-width: none; }
+    .ef-status {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border: 1px solid currentColor;
+      border-radius: 1px;
+      margin-bottom: 8px;
+    }
+    .ef-status.live  { color: var(--green); }
+    .ef-status.next  { color: var(--gold); }
+    .ef-status.later { color: #8A8880; }
+    .light .ef-status.live  { color: var(--green-deep); }
+    .light .ef-status.next  { color: var(--gold-ink); }
+    .light .ef-status.later { color: #4A4842; }
+    @media (max-width: 720px) {
+      .ef-children { grid-template-columns: 1fr; gap: 8px; }
+    }
+
+    /* --------- State coverage grid (§5) --------- */
+    .state-grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 4px;
+      margin: 32px 0 20px;
+      max-width: 720px;
+    }
+    .state-cell {
+      aspect-ratio: 1.7 / 1;
+      background: var(--dark-card);
+      border: 1px solid var(--rule-dark);
+      border-radius: 1px;
+    }
+    .light .state-cell { background: var(--light-card); border-color: var(--rule-light); }
+    .state-cell.on { background: var(--gold); border-color: var(--gold); }
+    .light .state-cell.on { background: var(--gold-ink); border-color: var(--gold-ink); }
+    .state-legend {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-top: 12px;
+    }
+    .dark .state-legend { color: var(--muted-dark); }
+    .light .state-legend { color: var(--muted-light); }
+    .state-legend .swatch {
+      display: inline-block; width: 18px; height: 12px; vertical-align: middle; margin-right: 8px; border: 1px solid currentColor;
+    }
+    .state-legend .swatch.on { background: var(--gold); border-color: var(--gold); }
+    .light .state-legend .swatch.on { background: var(--gold-ink); border-color: var(--gold-ink); }
+    @media (max-width: 720px) {
+      .state-grid { grid-template-columns: repeat(5, 1fr); }
+    }
+
     /* --------- Inversion variant (§4) --------- */
     .check-row.inv {
       grid-template-columns: 56px 18px 1fr 200px auto;
@@ -1314,6 +1433,144 @@
 
       <p class="prose mt-48" style="color:#C7C5BE;">
         The same coverage. The same exposure. The same dollars leaving your operating account every quarter. The difference is where they sleep at night. Why are you not doing this already?
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 5: MEDMERGE
+       ========================================================= -->
+  <section class="sec light">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">V.</span> MedMerge</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">This is the structure that<br>makes the inversion real.</h2>
+      <p class="lede">
+        Bliksem Holdings is the parent. Delaware LLC. Montana cell captive. Live in 8 states. Health benefits captive operational. Self-funded ERISA plan with custom fee schedules adjudicating through UMR, Aetna, and Meritain ASO platforms. The legal architecture took 18 months. It is filed, reviewed, and approved.
+      </p>
+
+      <h3 class="h-sub">Entity structure.</h3>
+      <div class="entity-flow">
+        <div class="ef-node">
+          <span class="ef-lbl">Parent / Holding</span>
+          <h4>Bliksem Holdings, LLC</h4>
+          <p class="ef-note">Delaware LLC. Owns the operating company and the cell captive structure.</p>
+        </div>
+        <div class="ef-arrow">&darr;</div>
+        <div class="ef-node">
+          <span class="ef-lbl">Operating Company</span>
+          <h4>MedMerge Platform</h4>
+          <p class="ef-note">Service lines, contracting, member relations, and the bespoke fee-schedule engineering.</p>
+        </div>
+        <div class="ef-arrow">&darr;</div>
+        <div class="ef-children">
+          <div class="ef-node">
+            <span class="ef-status live">Captive I &middot; Live</span>
+            <h4>Health Benefits</h4>
+            <p class="ef-note">Self-funded ERISA plan. UMR, Aetna, and Meritain ASO rails. Operating now.</p>
+          </div>
+          <div class="ef-node">
+            <span class="ef-status next">Captive II &middot; Next</span>
+            <h4>Property &amp; Casualty</h4>
+            <p class="ef-note">Filings complete. Onboarding cohort lined up. Twelve-month build window.</p>
+          </div>
+          <div class="ef-node">
+            <span class="ef-status later">Captive III &middot; Build Last</span>
+            <h4>Medical Malpractice</h4>
+            <p class="ef-note">Reinsurance-heavy in year one. Discipline over speed. Year 2+ activation.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="prose" style="font-size: 14.5px; color: var(--muted-light); border-left: 2px solid var(--gold-ink); padding-left: 20px; margin-top: 24px;">
+        Montana protected cell captive. Each cell independently reserved. Eighteen months of legal architecture: filed, reviewed, approved. Structured to be a captive, not a MEWA.
+      </p>
+
+      <h3 class="h-sub mt-64">Coverage footprint.</h3>
+      <p class="prose">
+        Eight states live today, each with an onboarded physician-partner practice and an operating captive cell. The grid below represents the fifty states. Filled squares are live.
+      </p>
+
+      <div class="state-grid">
+        <div class="state-cell on"></div><div class="state-cell"></div><div class="state-cell"></div><div class="state-cell on"></div><div class="state-cell"></div>
+        <div class="state-cell"></div><div class="state-cell"></div><div class="state-cell on"></div><div class="state-cell"></div><div class="state-cell"></div>
+        <div class="state-cell"></div><div class="state-cell"></div><div class="state-cell on"></div><div class="state-cell"></div><div class="state-cell"></div>
+        <div class="state-cell on"></div><div class="state-cell"></div><div class="state-cell"></div><div class="state-cell"></div><div class="state-cell"></div>
+        <div class="state-cell"></div><div class="state-cell on"></div><div class="state-cell"></div><div class="state-cell"></div><div class="state-cell"></div>
+        <div class="state-cell"></div><div class="state-cell"></div><div class="state-cell"></div><div class="state-cell on"></div><div class="state-cell"></div>
+        <div class="state-cell"></div><div class="state-cell"></div><div class="state-cell"></div><div class="state-cell"></div><div class="state-cell"></div>
+        <div class="state-cell"></div><div class="state-cell on"></div><div class="state-cell"></div><div class="state-cell"></div><div class="state-cell"></div>
+        <div class="state-cell"></div><div class="state-cell"></div><div class="state-cell"></div><div class="state-cell"></div><div class="state-cell on"></div>
+        <div class="state-cell"></div><div class="state-cell"></div><div class="state-cell"></div><div class="state-cell"></div><div class="state-cell"></div>
+      </div>
+      <div class="state-legend">
+        <span><span class="swatch on"></span>Live &middot; 8 states</span>
+        <span><span class="swatch"></span>Pipeline &middot; 42 states</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 6: PROOF IT WORKS
+       ========================================================= -->
+  <section class="sec dark">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">VI.</span> Proof It Works</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">Physician-owned hospitals<br>are already inside.</h2>
+      <p class="lede">
+        One physician-owned hospital, two years inside the structure. The numbers below are real, audited, and available to qualified diligence. Other physician-owned hospitals have followed. They cannot be named in this document. The proof set is growing because the architecture is working. Dutch sits on the board of Physician Led Healthcare for America. The momentum is real.
+      </p>
+
+      <h3 class="h-sub">The proof case.</h3>
+      <div class="stat-grid cols-2">
+        <div class="stat">
+          <div class="num">85%</div>
+          <div class="lbl">Specialty Rx Cost Reduction &middot; 3-Year Weighted Average</div>
+          <div class="desc">Pharmacy spend on specialty medications, rebuilt from contract upward. High-cost categories rationalized without changing coverage.</div>
+        </div>
+        <div class="stat">
+          <div class="num">106% &rarr; 10%</div>
+          <div class="lbl">Stop-loss ratio, Year 1 to Year 2</div>
+          <div class="desc">A losing program became a surplus-generating program. Underwriting fundamentals stayed the same. The architecture changed.</div>
+        </div>
+        <div class="stat">
+          <div class="num">$453,798</div>
+          <div class="lbl">Total retained on the balance sheet</div>
+          <div class="desc">Dollars that would have left the hospital under a carrier plan. Held inside the captive cell owned by the physicians.</div>
+        </div>
+        <div class="stat">
+          <div class="num">0%</div>
+          <div class="lbl">Realized renewal increase</div>
+          <div class="desc">Market assumption: 25 percent or more rate increase coming into Year 2. Actual result: a flat-rate pass. Headcount grew, PEPM held or declined.</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub mt-64">The broader trajectory.</h3>
+      <p class="prose" style="color:#C7C5BE;">
+        Other physician-owned hospitals have followed. The names sit under NDA. The aggregate is what matters: more facilities inside, more covered lives served, more surplus retained on physician balance sheets every quarter.
+      </p>
+
+      <div class="stat-grid cols-3">
+        <div class="stat">
+          <div class="num">5+</div>
+          <div class="lbl">Facilities inside the structure</div>
+          <div class="desc">Original proof case plus the operators who followed. Adding cohorts each quarter.</div>
+        </div>
+        <div class="stat">
+          <div class="num">1,500+</div>
+          <div class="lbl">Covered lives, aggregate</div>
+          <div class="desc">Employees of physician-owned facilities now inside a captive their physicians own. Growing with each onboarded practice.</div>
+        </div>
+        <div class="stat">
+          <div class="num">$1M+</div>
+          <div class="lbl">Surplus retained to date</div>
+          <div class="desc">Aggregate captive surplus held on physician balance sheets across the live book. Compounds with every claim that does not happen.</div>
+        </div>
+      </div>
+
+      <p class="prose mt-48" style="color:#C7C5BE;">
+        These numbers look like the numbers in your own books. Same cost categories. Same patient demographics. Same insurance market. The only variable that changed is who owns the surplus.
       </p>
     </div>
   </section>
