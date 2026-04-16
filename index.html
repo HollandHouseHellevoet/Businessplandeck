@@ -2089,6 +2089,115 @@
     </div>
   </section>
 
+  <!-- =========================================================
+       SECTION 12: DISTRIBUTION
+       ========================================================= -->
+  <section class="sec dark">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">XII.</span> Distribution</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">The audience is already built.</h2>
+      <p class="lede">
+        100,000-plus physicians. 36 million annual impressions. 5.4 percent engagement rate. Zero direct paid acquisition cost. Built over five years. Cannot be bought. Only rebuilt.
+      </p>
+
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="num">100K+</div>
+          <div class="lbl">Physician audience</div>
+          <div class="desc">Substack subscribers and platform readers across The Rojas Report ecosystem.</div>
+        </div>
+        <div class="stat">
+          <div class="num">36M</div>
+          <div class="lbl">Annual impressions</div>
+          <div class="desc">Across X, LinkedIn, Substack, YouTube, and podcast. Organic. No media buy.</div>
+        </div>
+        <div class="stat">
+          <div class="num">5.4%</div>
+          <div class="lbl">Engagement rate</div>
+          <div class="desc">Industry benchmark for healthcare content sits below one percent. This audience reads, responds, and forwards.</div>
+        </div>
+        <div class="stat">
+          <div class="num">$0</div>
+          <div class="lbl">Direct paid acquisition</div>
+          <div class="desc">Five years of compounding earned reach. No paid lists, no boosted posts, no agency retainer.</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Audience growth.</h3>
+      <p class="prose" style="color:#C7C5BE;">
+        Five years of compounding across the three primary platforms. Substack carries depth. X carries volume. LinkedIn carries professional conversion. The mix is deliberate.
+      </p>
+
+      <div class="chart-wrap">
+        <canvas id="chart-audience" aria-label="Audience growth across Substack, X, and LinkedIn over five years"></canvas>
+      </div>
+      <div class="chart-caption">Cumulative unique followers and subscribers &middot; Organic growth &middot; No paid acquisition</div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 13: POLICY
+       ========================================================= -->
+  <section class="sec light">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">XIII.</span> Policy</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">The policy arm is at the table.</h2>
+      <p class="lede">
+        Physician Led Healthcare for America. Three legislative priorities: repeal Section 6001 of the ACA (the physician-owned hospital moratorium), reform Certificate of Need laws in 34 states plus Washington D.C., enforce nonprofit hospital accountability. The Energy and Commerce committee receives 8.2 times more hospital industry funding than other House members. The industry funds committee seats, not candidates.
+      </p>
+
+      <div class="stat-grid cols-2">
+        <div class="stat" style="grid-column: 1 / -1; text-align: center; padding: 64px 48px;">
+          <div class="num" style="font-size: clamp(64px, 9vw, 120px); margin-bottom: 24px; color: var(--gold-ink);">8.2&times;</div>
+          <div class="lbl" style="font-size: 12px; letter-spacing: 0.26em;">More hospital industry funding</div>
+          <div class="desc" style="max-width: 640px; margin: 24px auto 0; font-size: 16px;">
+            Energy and Commerce Committee members receive 8.2 times more hospital industry funding than the average House member. The industry does not fund candidates. It funds committee seats. Replace the member. The money follows the chair.
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Three legislative priorities.</h3>
+      <div class="priority-stack">
+        <div class="priority-card">
+          <div class="priority-head">
+            <span class="priority-num">I</span>
+            <span class="priority-tag">Priority I</span>
+          </div>
+          <h3 class="priority-title">Repeal Section 6001</h3>
+          <p class="priority-body">
+            The physician-owned hospital moratorium. Banned new construction in 2010 under the ACA. 187 facilities remain, frozen in place. Repeal opens the market for physician-led facility investment.
+          </p>
+        </div>
+        <div class="priority-card">
+          <div class="priority-head">
+            <span class="priority-num">II</span>
+            <span class="priority-tag">Priority II</span>
+          </div>
+          <h3 class="priority-title">Reform CON Laws</h3>
+          <p class="priority-body">
+            Certificate of Need statutes in 34 states plus Washington D.C. let incumbent systems block new competitors from building. The laws were written in 1974. The incumbents they protect were small then. They are monopolies now.
+          </p>
+        </div>
+        <div class="priority-card">
+          <div class="priority-head">
+            <span class="priority-num">III</span>
+            <span class="priority-tag">Priority III</span>
+          </div>
+          <h3 class="priority-title">Nonprofit accountability</h3>
+          <p class="priority-body">
+            Nonprofit hospital systems carry tax-exempt balance sheets, pay executives eight-figure compensation, sue patients for unpaid bills, and report community benefit as a percentage of revenue. Enforce the standard or remove the exemption.
+          </p>
+        </div>
+      </div>
+
+      <p class="prose mt-48">
+        Dutch sits on the PHA board. The audience of 100,000-plus physicians is a mobilization asset. When PHA scores a legislator and publishes the result, the reach is immediate and credentialed. These are the doctors who do the work, reading the data, and voting accordingly.
+      </p>
+    </div>
+  </section>
+
   <!-- SECTION INSERTION POINT -->
 
   <!-- =========================================================
@@ -2150,6 +2259,63 @@
     // Per-section chart init functions are registered here as their
     // sections are built. Each push() takes a function that runs on
     // DOMContentLoaded.
+
+    // -------- §12 Audience growth across Substack, X, LinkedIn --------
+    window.__medmergeCharts.push(function initAudienceChart() {
+      const el = document.getElementById('chart-audience');
+      if (!el || !window.Chart) return;
+      const yrs = ['2021', '2022', '2023', '2024', '2025'];
+      new Chart(el, {
+        type: 'line',
+        data: {
+          labels: yrs,
+          datasets: [
+            {
+              label: 'Substack',
+              data: [2000, 12000, 38000, 72000, 105000],
+              borderColor: BRAND.gold,
+              backgroundColor: 'rgba(201,176,107,0.08)',
+              borderWidth: 2, tension: 0.3, fill: true,
+              pointRadius: 4, pointBackgroundColor: BRAND.gold,
+              pointBorderColor: '#111', pointBorderWidth: 2
+            },
+            {
+              label: 'X (Twitter)',
+              data: [5000, 22000, 58000, 110000, 180000],
+              borderColor: '#E8E6E0',
+              backgroundColor: 'rgba(232,230,224,0.06)',
+              borderWidth: 2, tension: 0.3, fill: true,
+              pointRadius: 4, pointBackgroundColor: '#E8E6E0',
+              pointBorderColor: '#111', pointBorderWidth: 2
+            },
+            {
+              label: 'LinkedIn',
+              data: [1000, 4500, 14000, 32000, 55000],
+              borderColor: BRAND.green,
+              backgroundColor: 'rgba(91,140,91,0.06)',
+              borderWidth: 2, tension: 0.3, fill: true,
+              pointRadius: 4, pointBackgroundColor: BRAND.green,
+              pointBorderColor: '#111', pointBorderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          scales: {
+            x: { grid: { display: false, drawBorder: false }, ticks: { color: BRAND.muted, font: { family: "'DM Mono', monospace", size: 11 } } },
+            y: {
+              grid: { color: BRAND.ruleDark, drawBorder: false },
+              ticks: { color: BRAND.muted, font: { family: "'DM Mono', monospace", size: 10 }, callback: function(v){ return v >= 1000 ? (v/1000)+'K' : v; } }
+            }
+          },
+          plugins: {
+            legend: { position: 'top', align: 'start', labels: { color: BRAND.ink, font: { family: "'DM Mono', monospace", size: 11 } } },
+            tooltip: { callbacks: { label: function(ctx){ return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString(); } } }
+          }
+        }
+      });
+    });
 
     // -------- §10 Forward contract price stability vs renewal volatility --------
     window.__medmergeCharts.push(function initForwardChart() {
