@@ -714,6 +714,75 @@
       color: var(--gold);
     }
 
+    /* --------- §III closing block --------- */
+    .five-close {
+      max-width: 760px;
+      margin-left: 0;
+      padding: 36px 40px;
+      border-left: 2px solid var(--gold-ink);
+      background: rgba(122, 99, 46, 0.04);
+      border-radius: 0 2px 2px 0;
+    }
+    .dark .five-close {
+      border-left-color: var(--gold);
+      background: rgba(201, 176, 107, 0.05);
+    }
+    .five-close-lede {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(20px, 2vw, 26px);
+      line-height: 1.4;
+      margin-bottom: 24px;
+    }
+    .light .five-close-lede { color: #1A1A1A; }
+    .dark  .five-close-lede { color: var(--text-on-dark); }
+    .five-close-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .five-close-list li {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+      padding-left: 16px;
+      position: relative;
+    }
+    .five-close-list li::before {
+      content: '\00B7';
+      position: absolute;
+      left: 0;
+      font-size: 18px;
+      line-height: 1;
+      top: 2px;
+    }
+    .light .five-close-list li,
+    .light .five-close-list li::before { color: var(--gold-ink); }
+    .dark .five-close-list li,
+    .dark .five-close-list li::before { color: var(--gold); }
+    .five-close-crescendo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(24px, 2.6vw, 32px);
+      line-height: 1.3;
+      margin: 0;
+    }
+    .five-close-crescendo em {
+      font-style: italic;
+    }
+    .light .five-close-crescendo { color: #1A1A1A; }
+    .light .five-close-crescendo em { color: var(--gold-ink); }
+    .dark  .five-close-crescendo { color: var(--text-on-dark); }
+    .dark  .five-close-crescendo em { color: var(--gold); }
+    @media (max-width: 640px) {
+      .five-close { padding: 24px 22px; }
+    }
+
     /* --------- Captive cards (§7) --------- */
     .captive-cards {
       display: grid;
@@ -1590,7 +1659,24 @@
         </div>
       </div>
 
-      <p class="prose mt-32">
+      <div class="five-close mt-48">
+        <p class="five-close-lede">
+          Five players. One physician-owned hospital. The reason this has continued for twenty years is structural. A single facility does not have the scale to push back on any one of them.
+        </p>
+        <ul class="five-close-list">
+          <li>The carrier owns the data.</li>
+          <li>The broker owns the relationship.</li>
+          <li>The ASO owns the rails.</li>
+          <li>The PPO owns the list.</li>
+          <li>The reinsurer owns the layer.</li>
+        </ul>
+        <p class="five-close-crescendo">
+          Alone, the math does not work.<br>
+          <em>Pooled, it inverts.</em>
+        </p>
+      </div>
+
+      <p class="prose mt-48">
         Five players. None of them write a check to you. All of them collect a check from you. Every year, automatically, on a renewal cycle the structure was built to protect.
       </p>
     </div>
