@@ -1089,6 +1089,261 @@
     <div class="vrule"></div>
   </div>
 
+  <!-- =========================================================
+       SECTION 7: THE THREE CAPTIVES
+       ========================================================= -->
+  <section class="sec light">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">VII.</span> The Three Captives</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">One hospital becomes a book.<br>A book becomes three captives.</h2>
+      <p class="lede">
+        The same architecture that lowered one hospital&rsquo;s loss ratio from 106 percent to 10 percent is a template. MedMerge extends it across three lines of risk, reserved, priced, and governed independently. Health benefits is live. Property and casualty is next. Medical malpractice is built last, on purpose.
+      </p>
+
+      <div class="stat-grid cols-3">
+        <div class="stat">
+          <div class="num">$110&ndash;170M</div>
+          <div class="lbl">Combined premium at scale</div>
+          <div class="desc">Managed across the three captive cells once the operating footprint reaches fifty to sixty physician-owned facilities.</div>
+        </div>
+        <div class="stat">
+          <div class="num">$15&ndash;22M</div>
+          <div class="lbl">Capital requirement</div>
+          <div class="desc">System-level capital to reserve and blend the three lines. Most of the health-benefits portion is covered by float and pre-funding.</div>
+        </div>
+        <div class="stat">
+          <div class="num">3</div>
+          <div class="lbl">Lines, one parent, three cells</div>
+          <div class="desc">Health benefits, P&amp;C, and medical malpractice. Each underwritten on its own. Contagion across lines blocked by design.</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Capital, by captive.</h3>
+      <p class="prose">
+        Each line is staged independently. The bar below shows the indicative capital mix: startup (legal, filing, and onboarding), reserved capital (surplus to support retained risk), and first-year operating expense. Reinsurance sits on top of these, not inside them.
+      </p>
+
+      <div class="chart-wrap">
+        <canvas id="chart-captivecap" aria-label="Captive capital stack, three lines"></canvas>
+      </div>
+      <div class="chart-caption">Indicative &middot; USD millions &middot; Pre-reinsurance</div>
+
+      <h3 class="h-sub">Risk spectrum.</h3>
+      <p class="prose">
+        Not every dollar of premium is retained. Retention is the lever. The three captives sit at different points on the retain-blend-reinsure spectrum, and they move along it as the book matures.
+      </p>
+
+      <div class="compare" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div class="col">
+          <span class="tag">Captive I &middot; Live</span>
+          <h3 style="font-size:24px;">Health Benefits</h3>
+          <ul>
+            <li><span class="mono" style="color:#C9B06B; font-size:11px; letter-spacing:0.18em;">CAPITAL</span><br>$6&ndash;9M, mostly covered by float and pre-funding.</li>
+            <li><span class="mono" style="color:#C9B06B; font-size:11px; letter-spacing:0.18em;">POSTURE</span><br>High retention on predictable frequency. Stop-loss above.</li>
+            <li><span class="mono" style="color:#C9B06B; font-size:11px; letter-spacing:0.18em;">STATUS</span><br>Operating. Claims data available to qualified diligence.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <span class="tag">Captive II &middot; Next</span>
+          <h3 style="font-size:24px;">Property &amp; Casualty</h3>
+          <ul>
+            <li><span class="mono" style="color:#C9B06B; font-size:11px; letter-spacing:0.18em;">CAPITAL</span><br>$4&ndash;6M across the book.</li>
+            <li><span class="mono" style="color:#C9B06B; font-size:11px; letter-spacing:0.18em;">POSTURE</span><br>Retained-line loss ratio target 60&ndash;65 percent. Catastrophic layers ceded.</li>
+            <li><span class="mono" style="color:#C9B06B; font-size:11px; letter-spacing:0.18em;">STATUS</span><br>Filings complete. Onboarding cohort lined up.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <span class="tag">Captive III &middot; Build last</span>
+          <h3 style="font-size:24px;">Medical Malpractice</h3>
+          <ul>
+            <li><span class="mono" style="color:#C9B06B; font-size:11px; letter-spacing:0.18em;">CAPITAL</span><br>$10&ndash;15M anchor capital.</li>
+            <li><span class="mono" style="color:#C9B06B; font-size:11px; letter-spacing:0.18em;">POSTURE</span><br>Reinsurance-heavy in year one. Retention climbs with credibility.</li>
+            <li><span class="mono" style="color:#C9B06B; font-size:11px; letter-spacing:0.18em;">STATUS</span><br>Deferred by design. Discipline over speed.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Build order.</h3>
+      <svg class="diagram-svg" viewBox="0 0 1100 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three-captive build timeline">
+        <style>
+          .tlRule { stroke: #D9D6CE; stroke-width: 1; }
+          .tlTick { stroke: #C9B06B; stroke-width: 1; }
+          .tlDotOn  { fill: #C9B06B; }
+          .tlDotNext{ fill: #1A1A1A; stroke: #C9B06B; stroke-width: 1.5; }
+          .tlDotLater{ fill: #FAFAF8; stroke: #8A8880; stroke-width: 1; }
+          .tlLbl  { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: 0.2em; fill: #6B6860; text-transform: uppercase; }
+          .tlTitle{ font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 22px; fill: #1A1A1A; }
+          .tlYr   { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; fill: #C9B06B; }
+        </style>
+        <line class="tlRule" x1="80" y1="90" x2="1020" y2="90"/>
+
+        <circle class="tlDotOn"    cx="160"  cy="90" r="9"/>
+        <line   class="tlTick"     x1="160"  y1="60" x2="160" y2="80"/>
+        <text class="tlYr"    x="160" y="50"  text-anchor="middle">NOW</text>
+        <text class="tlLbl"   x="160" y="120" text-anchor="middle">Captive I</text>
+        <text class="tlTitle" x="160" y="144" text-anchor="middle">Health Benefits</text>
+
+        <circle class="tlDotNext"  cx="500"  cy="90" r="9"/>
+        <line   class="tlTick"     x1="500"  y1="60" x2="500" y2="80"/>
+        <text class="tlYr"    x="500" y="50"  text-anchor="middle">NEXT 12 MO.</text>
+        <text class="tlLbl"   x="500" y="120" text-anchor="middle">Captive II</text>
+        <text class="tlTitle" x="500" y="144" text-anchor="middle">Property &amp; Casualty</text>
+
+        <circle class="tlDotLater" cx="920"  cy="90" r="9"/>
+        <line   class="tlTick"     x1="920"  y1="60" x2="920" y2="80"/>
+        <text class="tlYr"    x="920" y="50"  text-anchor="middle">YEAR 2+</text>
+        <text class="tlLbl"   x="920" y="120" text-anchor="middle">Captive III</text>
+        <text class="tlTitle" x="920" y="144" text-anchor="middle">Medical Malpractice</text>
+      </svg>
+
+      <p class="prose mt-48">
+        The captives capture the premium. But a captive, by itself, is a container. What fills it is the price the physician gets paid for the work.
+      </p>
+    </div>
+  </section>
+
+  <!-- bridge 7 -> 8 -->
+  <div class="bridge dark">
+    <div class="vrule"></div>
+    <q>Captives capture the premium. What about the price?</q>
+    <div class="vrule"></div>
+  </div>
+
+  <!-- =========================================================
+       SECTION 8: DIRECT CONTRACTING
+       ========================================================= -->
+  <section class="sec dark">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">VIII.</span> Direct Contracting</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">Remove the middleman.<br>The price follows.</h2>
+      <p class="lede">
+        A self-funded employer does not need a carrier to contract with a physician. It needs a contract. MedMerge writes those contracts at scale, on behalf of a network of physician-owned practices that share the captive. The employer pays the physician directly, at a rate the two sides agreed to, with no network access fee in between.
+      </p>
+
+      <h3 class="h-sub">Two paths. Same procedure.</h3>
+      <p class="prose" style="color:#C7C5BE;">
+        The diagram below traces a single procedure through the traditional carrier path and through the MedMerge direct path. Same patient, same clinical work, different economics for everyone at the table.
+      </p>
+
+      <svg class="flow-svg" viewBox="0 0 1180 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Direct contracting versus carrier-brokered path">
+        <defs>
+          <marker id="arrRed2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#9B4444"/>
+          </marker>
+          <marker id="arrGold2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#C9B06B"/>
+          </marker>
+        </defs>
+        <style>
+          .dcLaneBg { fill: #1A1A1A; stroke: #262626; stroke-width: 1; }
+          .dcBoxDark  { fill: #111; stroke: #C9B06B; stroke-width: 1.25; }
+          .dcBoxDim   { fill: #111; stroke: #9B4444; stroke-width: 1.25; }
+          .dcBoxMute  { fill: #111; stroke: #8A8880; stroke-width: 1; }
+          .dcTitle    { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 24px; fill: #E8E6E0; }
+          .dcLane     { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; }
+          .dcLbl      { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; fill: #8A8880; text-transform: uppercase; }
+          .dcName     { font-family: 'Libre Baskerville', serif; font-size: 14px; fill: #E8E6E0; }
+          .dcNote     { font-family: 'Libre Baskerville', serif; font-size: 11px; fill: #8A8880; font-style: italic; }
+          .dcWireR    { stroke: #9B4444; stroke-width: 1.25; fill: none; }
+          .dcWireG    { stroke: #C9B06B; stroke-width: 1.5; fill: none; }
+          .dcTag      { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em; fill: #9B4444; text-transform: uppercase; }
+          .dcTagG     { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em; fill: #C9B06B; text-transform: uppercase; }
+        </style>
+
+        <!-- Lane A: carrier path -->
+        <rect class="dcLaneBg" x="20" y="20" width="1140" height="220" rx="2"/>
+        <text class="dcLane"  x="40" y="50" style="fill:#9B4444;">PATH A / CARRIER-BROKERED</text>
+        <text class="dcTitle" x="40" y="82">Five parties. Four margins. One price, unknowable.</text>
+
+        <rect class="dcBoxDim" x="40"  y="130" width="160" height="70"/>
+        <text class="dcLbl"  x="56" y="152">Self-funded employer</text>
+        <text class="dcName" x="56" y="178">Pays premium</text>
+
+        <line class="dcWireR" x1="200" y1="165" x2="260" y2="165" marker-end="url(#arrRed2)"/>
+
+        <rect class="dcBoxDim" x="260" y="130" width="150" height="70"/>
+        <text class="dcLbl"  x="274" y="152">Broker</text>
+        <text class="dcName" x="274" y="178">Commission</text>
+
+        <line class="dcWireR" x1="410" y1="165" x2="470" y2="165" marker-end="url(#arrRed2)"/>
+
+        <rect class="dcBoxDim" x="470" y="130" width="170" height="70"/>
+        <text class="dcLbl"  x="486" y="152">Carrier</text>
+        <text class="dcName" x="486" y="178">Network + margin</text>
+
+        <line class="dcWireR" x1="640" y1="165" x2="700" y2="165" marker-end="url(#arrRed2)"/>
+
+        <rect class="dcBoxDim" x="700" y="130" width="170" height="70"/>
+        <text class="dcLbl"  x="716" y="152">Network access fee</text>
+        <text class="dcName" x="716" y="178">PPO / TPA stack</text>
+
+        <line class="dcWireR" x1="870" y1="165" x2="930" y2="165" marker-end="url(#arrRed2)"/>
+
+        <rect class="dcBoxDim" x="930" y="130" width="210" height="70"/>
+        <text class="dcLbl"  x="946" y="152">Physician</text>
+        <text class="dcName" x="946" y="178">Paid last. Denial risk.</text>
+
+        <text class="dcTag" x="40" y="220">ANNUAL RENEWAL &middot; INFORMATION ASYMMETRIC &middot; RATE SET BY THE PARTY FARTHEST FROM THE WORK</text>
+
+        <!-- Divider -->
+        <text class="dcLane" x="570" y="272" style="fill:#C9B06B; text-anchor: middle;">VS.</text>
+
+        <!-- Lane B: direct path -->
+        <rect class="dcLaneBg" x="20" y="290" width="1140" height="210" rx="2" style="stroke:#C9B06B;"/>
+        <text class="dcLane"  x="40" y="320" style="fill:#C9B06B;">PATH B / MEDMERGE DIRECT</text>
+        <text class="dcTitle" x="40" y="352">Two parties. One contract. A price both sides agreed to.</text>
+
+        <rect class="dcBoxDark" x="140" y="398" width="210" height="76"/>
+        <text class="dcLbl"  x="156" y="422" style="fill:#C9B06B;">Self-funded employer</text>
+        <text class="dcName" x="156" y="448">Pays physician directly</text>
+        <text class="dcNote" x="156" y="466">at a rate both sides agreed to</text>
+
+        <line class="dcWireG" x1="350" y1="436" x2="560" y2="436" marker-end="url(#arrGold2)"/>
+
+        <rect class="dcBoxMute" x="430" y="398" width="180" height="40" style="stroke:#C9B06B; stroke-dasharray: 3 3;"/>
+        <text class="dcLbl"  x="446" y="422" style="fill:#C9B06B;">MedMerge contracting</text>
+
+        <rect class="dcBoxDark" x="680" y="398" width="210" height="76"/>
+        <text class="dcLbl"  x="696" y="422" style="fill:#C9B06B;">Physician / practice</text>
+        <text class="dcName" x="696" y="448">Paid faster. Known rate.</text>
+        <text class="dcNote" x="696" y="466">No denial risk. No access fee.</text>
+
+        <text class="dcTagG" x="40" y="490">ONE DOCUMENT &middot; ONE RATE &middot; WRITTEN BY PEOPLE WHO UNDERSTAND THE WORK</text>
+      </svg>
+
+      <div class="stat-grid cols-3 mt-48">
+        <div class="stat">
+          <div class="num">0</div>
+          <div class="lbl">Network access fees</div>
+          <div class="desc">No PPO lease, no rental network margin, no carrier surcharge between the employer and the physician.</div>
+        </div>
+        <div class="stat">
+          <div class="num">&lt; 14d</div>
+          <div class="lbl">Typical payment cycle</div>
+          <div class="desc">Paid directly from the self-funded plan, not through a carrier claims queue. No denial arbitrage.</div>
+        </div>
+        <div class="stat">
+          <div class="num">1</div>
+          <div class="lbl">Sales team required</div>
+          <div class="desc">MedMerge&rsquo;s. Physician practices plug into the contracting infrastructure. They keep seeing patients.</div>
+        </div>
+      </div>
+
+      <p class="prose mt-48" style="color:#C7C5BE;">
+        Self-funded employers can add the MedMerge physician network to any benefit design and steer volume to it. The physician gets a known rate and a clean receivable. The employer gets pricing that was impossible under the four-party trade. The carrier is not harmed. It is simply not invited.
+      </p>
+    </div>
+  </section>
+
+  <!-- bridge 8 -> 9 -->
+  <div class="bridge light">
+    <div class="vrule"></div>
+    <q>Direct contracts fix the price for one year. What happens at renewal?</q>
+    <div class="vrule"></div>
+  </div>
+
   <!-- SECTION INSERTION POINT -->
 
   <!-- =========================================================
@@ -1275,6 +1530,56 @@
             tooltip: {
               callbacks: {
                 label: function (ctx) { return ctx.dataset.label + ': ' + ctx.parsed.y + '%'; }
+              }
+            }
+          }
+        }
+      });
+    });
+
+    // -------- §7 Captive capital stack --------
+    window.__medmergeCharts.push(function initCaptiveCapChart() {
+      const el = document.getElementById('chart-captivecap');
+      if (!el || !window.Chart) return;
+      new Chart(el, {
+        type: 'bar',
+        data: {
+          labels: ['Health Benefits', 'Property & Casualty', 'Medical Malpractice'],
+          datasets: [
+            { label: 'Startup (legal, filing, onboarding)', data: [0.5, 0.5, 1.0], backgroundColor: '#8E7A47', borderWidth: 0, barPercentage: 0.58, categoryPercentage: 0.72 },
+            { label: 'Reserved capital',                    data: [6.0, 4.0, 10.0], backgroundColor: '#C9B06B', borderWidth: 0, barPercentage: 0.58, categoryPercentage: 0.72 },
+            { label: 'Year-one opex',                       data: [1.0, 0.5, 1.5],  backgroundColor: '#5B8C5B', borderWidth: 0, barPercentage: 0.58, categoryPercentage: 0.72 }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          indexAxis: 'y',
+          scales: {
+            x: {
+              stacked: true,
+              grid: { color: BRAND.ruleLight, drawBorder: false },
+              ticks: {
+                color: '#6B6860',
+                font: { family: "'DM Mono', monospace", size: 10 },
+                callback: function (v) { return '$' + v + 'M'; }
+              }
+            },
+            y: {
+              stacked: true,
+              grid: { display: false, drawBorder: false },
+              ticks: { color: '#1A1A1A', font: { family: "'DM Mono', monospace", size: 11 } }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+              align: 'start',
+              labels: { color: '#1A1A1A', font: { family: "'DM Mono', monospace", size: 11 } }
+            },
+            tooltip: {
+              callbacks: {
+                label: function (ctx) { return ctx.dataset.label + ': $' + ctx.parsed.x + 'M'; }
               }
             }
           }
