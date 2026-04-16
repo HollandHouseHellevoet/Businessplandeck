@@ -1961,6 +1961,79 @@
     </div>
   </section>
 
+  <!-- =========================================================
+       SECTION 10: KILLING THE RENEWAL CYCLE
+       ========================================================= -->
+  <section class="sec dark">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">X.</span> Killing the Renewal Cycle</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">The problem with healthcare benefits<br>is that the renewals occur annually.</h2>
+      <p class="lede">
+        Every twelve months the price resets and the party with the most information sets the new number. A forward contract eliminates that leverage by locking the price for two or three years. The employer buys utilization in advance at a known rate. The physician gets revenue certainty. Neither needs the carrier to set the terms.
+      </p>
+
+      <div class="compare">
+        <div class="col">
+          <span class="tag">Annual renewal</span>
+          <h3 style="font-size:26px;">The renewal clock</h3>
+          <ul>
+            <li>The whole plan resets every twelve months. Carriers own the claims data, the actuarial model, and the deadline.</li>
+            <li>Employers negotiate blind. Physicians are not at the table.</li>
+            <li>Year-over-year volatility compounds. Budget certainty is impossible.</li>
+            <li>Every renewal is a chance to re-price the information gap.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <span class="tag">Forward contract</span>
+          <h3 style="font-size:26px;">The physician&#39;s lock</h3>
+          <ul>
+            <li>Price fixed for two to three years. Both sides agree to the rate and the volume band in advance.</li>
+            <li>The employer gets budget certainty. The physician gets revenue certainty.</li>
+            <li>No annual renegotiation. No information asymmetry at renewal.</li>
+            <li>The carrier is not between the two parties that actually do the work.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="h-sub">The emergency room example.</h3>
+      <p class="prose" style="color:#C7C5BE;">
+        Emergency room visits are the single most volatile line item in any self-funded health plan. They cannot be scheduled. They cannot be steered at the point of need. They are the cost category that scares every CFO looking at next year&#39;s budget.
+      </p>
+      <p class="prose" style="color:#C7C5BE;">
+        A self-funded employer with 5,000 covered lives can model approximately 850 ER visits per year using demographic data. A forward contract with a physician-owned micro hospital locks the per-visit price for two to three years. The employer gets cost certainty on the line item that scares them most. The micro hospital ER, which is most of this audience, gets guaranteed volume at a known rate. The carrier loses leverage on the most volatile cost category.
+      </p>
+
+      <div class="stat-grid cols-3">
+        <div class="stat">
+          <div class="num">5,000</div>
+          <div class="lbl">Covered lives</div>
+          <div class="desc">A mid-size self-funded employer. Large enough to predict utilization. Small enough to be ignored by a carrier.</div>
+        </div>
+        <div class="stat">
+          <div class="num">~850</div>
+          <div class="lbl">ER visits per year</div>
+          <div class="desc">Predictable within a narrow band using demographic modeling. Most physician-owned micro hospitals already have the ER capacity to serve it.</div>
+        </div>
+        <div class="stat">
+          <div class="num">2&ndash;3 yr</div>
+          <div class="lbl">Contract horizon</div>
+          <div class="desc">Long enough to remove the renewal clock. Short enough to reprice as the market moves.</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Price stability over time.</h3>
+      <p class="prose" style="color:#C7C5BE;">
+        Five years of cost per ER visit modeled two ways: under annual renewal volatility (red) versus a forward-locked rate (gold). The forward does not eliminate cost. It eliminates surprise. The physician plans capacity. The employer plans budget. Both build from a number they already know.
+      </p>
+
+      <div class="chart-wrap">
+        <canvas id="chart-forward" aria-label="Annual renewal volatility versus forward contract price stability, five years"></canvas>
+      </div>
+      <div class="chart-caption">Illustrative &middot; Cost per ER visit &middot; Indexed to Year 1 baseline</div>
+    </div>
+  </section>
+
   <!-- SECTION INSERTION POINT -->
 
   <!-- =========================================================
@@ -2022,6 +2095,57 @@
     // Per-section chart init functions are registered here as their
     // sections are built. Each push() takes a function that runs on
     // DOMContentLoaded.
+
+    // -------- §10 Forward contract price stability vs renewal volatility --------
+    window.__medmergeCharts.push(function initForwardChart() {
+      const el = document.getElementById('chart-forward');
+      if (!el || !window.Chart) return;
+      const yrs = ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'];
+      const renewal = [100, 114, 108, 126, 119];
+      const forward = [100, 102, 104, 106, 108];
+      new Chart(el, {
+        type: 'line',
+        data: {
+          labels: yrs,
+          datasets: [
+            {
+              label: 'Annual renewal (carrier-set)',
+              data: renewal,
+              borderColor: BRAND.red,
+              backgroundColor: 'rgba(155, 68, 68, 0.10)',
+              borderWidth: 2, tension: 0.25, fill: true,
+              pointRadius: 5, pointBackgroundColor: BRAND.red,
+              pointBorderColor: '#111', pointBorderWidth: 2
+            },
+            {
+              label: 'Forward contract (locked rate)',
+              data: forward,
+              borderColor: BRAND.gold,
+              backgroundColor: 'rgba(201, 176, 107, 0.10)',
+              borderWidth: 2, tension: 0.05, fill: true,
+              pointRadius: 5, pointBackgroundColor: BRAND.gold,
+              pointBorderColor: '#111', pointBorderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          scales: {
+            x: { grid: { display: false, drawBorder: false }, ticks: { color: BRAND.muted, font: { family: "'DM Mono', monospace", size: 11 } } },
+            y: {
+              grid: { color: BRAND.ruleDark, drawBorder: false },
+              min: 80, max: 140,
+              ticks: { color: BRAND.muted, font: { family: "'DM Mono', monospace", size: 10 }, stepSize: 10 }
+            }
+          },
+          plugins: {
+            legend: { position: 'top', align: 'start', labels: { color: BRAND.ink, font: { family: "'DM Mono', monospace", size: 11 } } },
+            tooltip: { callbacks: { label: function(ctx){ return ctx.dataset.label + ': ' + ctx.parsed.y; } } }
+          }
+        }
+      });
+    });
 
     document.addEventListener('DOMContentLoaded', function () {
       window.__medmergeCharts.forEach(function (fn) { try { fn(); } catch (e) { console.error(e); } });
