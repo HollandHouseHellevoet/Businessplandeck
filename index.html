@@ -577,6 +577,84 @@
       .check-row.with-dest .check-amt { grid-column: 2 / 3; }
     }
 
+    /* --------- Captive cards (§7) --------- */
+    .captive-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule-light);
+      margin: 48px 0 32px;
+      border-top: 1px solid var(--rule-light);
+      border-bottom: 1px solid var(--rule-light);
+    }
+    .dark .captive-cards { background: var(--rule-dark); border-color: var(--rule-dark); }
+    .cap-card {
+      background: var(--light-card);
+      padding: 36px 30px;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .dark .cap-card { background: var(--dark-card); }
+    .cap-status {
+      align-self: flex-start;
+      font-family: 'DM Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border: 1px solid currentColor;
+      border-radius: 1px;
+    }
+    .cap-status.locked { color: var(--green); }
+    .cap-status.next   { color: var(--gold); }
+    .cap-status.later  { color: #8A8880; }
+    .light .cap-status.locked { color: var(--green-deep); }
+    .light .cap-status.next   { color: var(--gold-ink); }
+    .light .cap-status.later  { color: #4A4842; }
+    .cap-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 30px;
+      line-height: 1.05;
+    }
+    .light .cap-title { color: #1A1A1A; }
+    .dark  .cap-title { color: #E8E6E0; }
+    .cap-rows {
+      display: flex; flex-direction: column; gap: 14px;
+      margin-top: 4px;
+    }
+    .cap-row {
+      padding-top: 14px;
+      border-top: 1px solid var(--rule-light);
+    }
+    .dark .cap-row { border-top-color: var(--rule-dark); }
+    .cap-row-lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .light .cap-row-lbl { color: var(--gold-ink); }
+    .dark  .cap-row-lbl { color: var(--gold); }
+    .cap-row-val {
+      font-family: 'DM Mono', monospace;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+    .light .cap-row-val { color: #1A1A1A; }
+    .dark  .cap-row-val { color: #E8E6E0; }
+    .cap-row-fact {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+    .light .cap-row-fact { color: #3A3832; }
+    .dark  .cap-row-fact { color: #C7C5BE; }
+    @media (max-width: 900px) {
+      .captive-cards { grid-template-columns: 1fr; }
+    }
+
     /* --------- Entity stack diagram (§5, mobile-first) --------- */
     .entity-flow {
       display: flex;
@@ -1572,6 +1650,127 @@
       <p class="prose mt-48" style="color:#C7C5BE;">
         These numbers look like the numbers in your own books. Same cost categories. Same patient demographics. Same insurance market. The only variable that changed is who owns the surplus.
       </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 7: THE THREE CAPTIVES
+       ========================================================= -->
+  <section class="sec light">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">VII.</span> The Three Captives</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">Three structures.<br>One balance sheet.</h2>
+      <p class="lede">
+        Health benefits. Property and casualty. Medical malpractice. Each reserved, priced, and governed independently. Each built in sequence. The premium that funds them is already being spent across the system today. The captive simply changes the destination.
+      </p>
+
+      <p class="prose" style="font-size: 16px; margin-bottom: 32px; border-left: 2px solid var(--gold-ink); padding-left: 24px;">
+        This is a homogeneous captive, built exclusively for healthcare professionals: physician-owned hospitals and medical practices with fifty or more employees. Member selection is the moat. Every participant shares the same risk profile, the same operating posture, and the same regulatory horizon. Not a generic group captive. The homogeneity is the product.
+      </p>
+
+      <div class="captive-cards">
+        <div class="cap-card">
+          <span class="cap-status locked">Captive I &middot; Locked</span>
+          <h3 class="cap-title">Health Benefits</h3>
+          <div class="cap-rows">
+            <div class="cap-row">
+              <span class="cap-row-lbl">Capital required</span>
+              <div class="cap-row-val">$6M to $9M</div>
+              <div class="cap-row-fact">Mostly covered by float and pre-funding inside the cell.</div>
+            </div>
+            <div class="cap-row">
+              <span class="cap-row-lbl">Premium at scale</span>
+              <div class="cap-row-val">$45M to $70M</div>
+              <div class="cap-row-fact">Across the projected member pool of facilities and practices.</div>
+            </div>
+            <div class="cap-row">
+              <span class="cap-row-lbl">Key fact</span>
+              <div class="cap-row-fact">Operating today. Self-funded ERISA plan with bespoke fee schedules adjudicating through Aetna, UMR, and Meritain.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cap-card">
+          <span class="cap-status next">Captive II &middot; Next</span>
+          <h3 class="cap-title">Property &amp; Casualty</h3>
+          <div class="cap-rows">
+            <div class="cap-row">
+              <span class="cap-row-lbl">Capital required</span>
+              <div class="cap-row-val">$4M to $6M</div>
+              <div class="cap-row-fact">Across property, GL, workers comp, umbrella, and the surrounding lines.</div>
+            </div>
+            <div class="cap-row">
+              <span class="cap-row-lbl">Premium at scale</span>
+              <div class="cap-row-val">$25M to $40M</div>
+              <div class="cap-row-fact">Retained-line loss ratio target 60 to 65 percent. Catastrophic layers ceded.</div>
+            </div>
+            <div class="cap-row">
+              <span class="cap-row-lbl">Key fact</span>
+              <div class="cap-row-fact">Filings complete. Onboarding cohort lined up. Twelve-month build window from activation.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cap-card">
+          <span class="cap-status later">Captive III &middot; Build Last</span>
+          <h3 class="cap-title">Medical Malpractice</h3>
+          <div class="cap-rows">
+            <div class="cap-row">
+              <span class="cap-row-lbl">Capital required</span>
+              <div class="cap-row-val">$10M to $15M</div>
+              <div class="cap-row-fact">Anchor capital. Reinsurance-heavy in year one. Retention climbs with credibility.</div>
+            </div>
+            <div class="cap-row">
+              <span class="cap-row-lbl">Premium at scale</span>
+              <div class="cap-row-val">$40M to $60M</div>
+              <div class="cap-row-fact">Highest premium per facility, longest tail, most reinsurance discipline required.</div>
+            </div>
+            <div class="cap-row">
+              <span class="cap-row-lbl">Key fact</span>
+              <div class="cap-row-fact">Built last on purpose. Discipline over speed. Year 2-plus activation, after the operating book proves out.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="h-sub mt-64">The book at scale.</h3>
+      <div class="stat-grid cols-2">
+        <div class="stat">
+          <div class="num">$110M&ndash;$170M</div>
+          <div class="lbl">Combined premium at scale</div>
+          <div class="desc">Across the three captive cells, supported by premium that is already being spent across the addressable market today.</div>
+        </div>
+        <div class="stat">
+          <div class="num">$15M&ndash;$22M</div>
+          <div class="lbl">System-level capital requirement</div>
+          <div class="desc">To reserve and blend all three lines. Most of the health benefits portion is covered by float and pre-funding.</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">The addressable market.</h3>
+      <div class="stat-grid cols-2">
+        <div class="stat">
+          <div class="num">2,000&ndash;3,500</div>
+          <div class="lbl">Physicians inside the target footprint</div>
+          <div class="desc">Owners and lead physicians at the practices and facilities that fit the captive selection criteria.</div>
+        </div>
+        <div class="stat">
+          <div class="num">27</div>
+          <div class="lbl">Micro hospitals</div>
+          <div class="desc">Physician-owned micro hospitals across the live and pipeline states. Every name a known relationship.</div>
+        </div>
+        <div class="stat">
+          <div class="num">50</div>
+          <div class="lbl">Surgical hospitals</div>
+          <div class="desc">Physician-owned surgical specialty hospitals that fit the captive risk profile.</div>
+        </div>
+        <div class="stat">
+          <div class="num">25</div>
+          <div class="lbl">Ambulatory surgery centers</div>
+          <div class="desc">Physician-owned ASCs targeted for the cohort once the P&amp;C cell activates.</div>
+        </div>
+      </div>
     </div>
   </section>
 
