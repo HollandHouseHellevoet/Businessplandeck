@@ -1344,6 +1344,198 @@
     <div class="vrule"></div>
   </div>
 
+  <!-- =========================================================
+       SECTION 9: FORWARD CONTRACTS
+       ========================================================= -->
+  <section class="sec light">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">IX.</span> Forward Contracts</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">Lock the price.<br>Kill the renewal cycle.</h2>
+      <p class="lede">
+        The problem with direct contracts: they renew annually. Every twelve months, the price resets, and the party with the most information sets the new number. A forward contract eliminates that leverage by locking the price for two or three years. The employer buys utilization in advance at a known rate. The physician gets revenue certainty. Neither needs the carrier to set the terms.
+      </p>
+
+      <div class="compare">
+        <div class="col">
+          <span class="tag">Annual renewal</span>
+          <h3 style="font-size:26px;">The carrier&rsquo;s clock</h3>
+          <ul>
+            <li>Price resets every twelve months. The carrier owns the claims data, the actuarial model, and the renewal deadline.</li>
+            <li>The employer negotiates blind. The physician is not at the table.</li>
+            <li>Year-over-year volatility compounds. Budget certainty is impossible.</li>
+            <li>Every renewal is a chance for the carrier to re-price the information gap.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <span class="tag">Forward contract</span>
+          <h3 style="font-size:26px;">The physician&rsquo;s lock</h3>
+          <ul>
+            <li>Price fixed for two to three years. Both sides agree to the rate and the volume band in advance.</li>
+            <li>The employer gets budget certainty. The physician gets revenue certainty.</li>
+            <li>No annual renegotiation. No information asymmetry at renewal.</li>
+            <li>The carrier is not between the two parties that actually do the work.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="h-sub">The math on one employer.</h3>
+      <p class="prose">
+        An employer with 5,000 covered lives knows, from demographic data, that it will need approximately 200 knee replacements over the next three years. Today that employer buys those procedures one at a time, at a rate it discovers only after the claim is filed. Under a forward contract, the employer buys a volume band at a fixed price. The physician-owned facility gets guaranteed volume. The employer gets price certainty. The contract is a commodity forward. It is how every other market on earth works.
+      </p>
+
+      <div class="stat-grid cols-3">
+        <div class="stat">
+          <div class="num">5,000</div>
+          <div class="lbl">Covered lives</div>
+          <div class="desc">A mid-size self-funded employer. Large enough to predict utilization. Small enough to be ignored by a carrier.</div>
+        </div>
+        <div class="stat">
+          <div class="num">~200</div>
+          <div class="lbl">Knee replacements / 3 yr</div>
+          <div class="desc">Demographic modeling makes this predictable. The carrier already knows this number. It just does not share it.</div>
+        </div>
+        <div class="stat">
+          <div class="num">2&ndash;3 yr</div>
+          <div class="lbl">Contract horizon</div>
+          <div class="desc">Long enough to remove the renewal clock. Short enough to reprice as the market moves.</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Price stability over time.</h3>
+      <p class="prose">
+        The chart below models five years of cost per procedure under annual renewal volatility (red) versus a forward-locked rate (gold). The forward does not eliminate cost, it eliminates surprise. The physician plans capacity. The employer plans budget. Both build from a number they already know.
+      </p>
+
+      <div class="chart-wrap">
+        <canvas id="chart-forward" aria-label="Annual renewal volatility versus forward contract price stability, five years"></canvas>
+      </div>
+      <div class="chart-caption">Illustrative &middot; Cost per procedure &middot; Indexed to Year 1 baseline</div>
+
+      <p class="prose mt-48">
+        Oil, grain, metals, natural gas, electricity, interest rates, currency. Every commodity with meaningful volume trades on forward contracts. Healthcare is the last major market without forward pricing. That is not complexity. That is a business model built on opacity. Dutch Rojas wrote his graduate thesis on this. The concept is called surgery futures and options. It is not theoretical. The contracts in the prior section are the precursor.
+      </p>
+    </div>
+  </section>
+
+  <!-- bridge 9 -> 10 -->
+  <div class="bridge dark">
+    <div class="vrule"></div>
+    <q>Forward contracts work for individual employers and physicians. What happens when you need institutional pricing across the entire market?</q>
+    <div class="vrule"></div>
+  </div>
+
+  <!-- =========================================================
+       SECTION 10: THE EXCHANGE
+       ========================================================= -->
+  <section class="sec dark">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">X.</span> The Exchange</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">The world spends $15 trillion<br>on healthcare every year.<br>There is no exchange.</h2>
+      <p class="lede">
+        Not a single country on earth has a transparent, competitive marketplace where medical treatments are priced against quality. Every other commodity has one. Oil has NYMEX. Grain has the CBOT. Metals have the LME. Healthcare has negotiation behind closed doors, and the party with the most information sets the price. That is not complexity. That is a business model.
+      </p>
+
+      <div class="stat-grid cols-2">
+        <div class="stat">
+          <div class="num">$15T</div>
+          <div class="lbl">Global healthcare spend / year</div>
+          <div class="desc">The largest market in the world without exchange-based pricing. Every dollar priced in private negotiation between parties with asymmetric information.</div>
+        </div>
+        <div class="stat">
+          <div class="num">0</div>
+          <div class="lbl">Exchanges, globally</div>
+          <div class="desc">No futures, no options, no standardized contracts, no public price discovery. The absence is the product.</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">What an exchange does.</h3>
+      <div class="prose" style="color:#C7C5BE;">
+        <p>An exchange forces institutional buyers to compete on both price and quality simultaneously. Insurance does not do this. Regulation does not do this. Negotiation between two private parties does not do this. Only an exchange, with standardized contracts and transparent pricing, does this.</p>
+        <p>Every industry that adopted exchange-based pricing got cheaper, faster, and more transparent. Airlines after deregulation. Electricity after restructuring. Telecommunications after the breakup. Financial instruments after the creation of options exchanges. Every single one.</p>
+        <p>Governments, Medicare, Medicaid, commercial health plans, and self-funded employers can all participate. The exchange is agnostic to the payer. It cares about the contract.</p>
+      </div>
+
+      <h3 class="h-sub">The progression.</h3>
+      <p class="prose" style="color:#C7C5BE;">
+        You cannot build an exchange without standardized contracts. You cannot write standardized contracts without forward pricing. You cannot offer forward pricing without direct contracting. You cannot do direct contracting at scale without captive infrastructure. MedMerge is building the stack from the bottom up. The exchange is the endgame. Every layer beneath it is live or in development.
+      </p>
+
+      <svg class="diagram-svg" viewBox="0 0 1100 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Progression from captives to exchange">
+        <style>
+          .pStepOn  { fill: #1A1A1A; stroke: #C9B06B; stroke-width: 1.25; }
+          .pStepDim { fill: #1A1A1A; stroke: #2A2A2A; stroke-width: 1; }
+          .pWire    { stroke: #C9B06B; stroke-width: 1; fill: none; }
+          .pWireDim { stroke: #2A2A2A; stroke-width: 1; fill: none; }
+          .pNow     { font-family: 'DM Mono', monospace; font-size: 9px; fill: #5B8C5B; letter-spacing: 0.22em; text-transform: uppercase; }
+          .pNext    { font-family: 'DM Mono', monospace; font-size: 9px; fill: #C9B06B; letter-spacing: 0.22em; text-transform: uppercase; }
+          .pFut     { font-family: 'DM Mono', monospace; font-size: 9px; fill: #8A8880; letter-spacing: 0.22em; text-transform: uppercase; }
+          .pTitle   { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 26px; fill: #E8E6E0; }
+          .pDesc    { font-family: 'Libre Baskerville', serif; font-size: 11.5px; fill: #8A8880; }
+        </style>
+
+        <!-- Step 1: Captives (now) -->
+        <rect class="pStepOn" x="20"  y="70" width="230" height="110" rx="2"/>
+        <text class="pNow"    x="38" y="96">LIVE</text>
+        <text class="pTitle"  x="38" y="128">Captive Insurance</text>
+        <text class="pDesc"   x="38" y="152">Pool risk. Capture float.</text>
+        <text class="pDesc"   x="38" y="168">Retain surplus on balance sheet.</text>
+        <circle cx="240" cy="125" r="4" fill="#5B8C5B"/>
+
+        <!-- Wire 1-2 -->
+        <line class="pWire" x1="250" y1="125" x2="290" y2="125"/>
+        <polygon points="288,120 298,125 288,130" fill="#C9B06B"/>
+
+        <!-- Step 2: Direct Contracting -->
+        <rect class="pStepOn" x="298" y="70" width="230" height="110" rx="2"/>
+        <text class="pNext"   x="316" y="96">BUILDING</text>
+        <text class="pTitle"  x="316" y="128">Direct Contracts</text>
+        <text class="pDesc"   x="316" y="152">Remove the carrier.</text>
+        <text class="pDesc"   x="316" y="168">Set the rate between two parties.</text>
+        <circle cx="518" cy="125" r="4" fill="#C9B06B"/>
+
+        <!-- Wire 2-3 -->
+        <line class="pWire" x1="528" y1="125" x2="568" y2="125"/>
+        <polygon points="566,120 576,125 566,130" fill="#C9B06B"/>
+
+        <!-- Step 3: Forward Contracts -->
+        <rect class="pStepDim" x="576" y="70" width="230" height="110" rx="2" style="stroke:#C9B06B;"/>
+        <text class="pNext"   x="594" y="96">NEXT</text>
+        <text class="pTitle"  x="594" y="128" style="fill:#C7C5BE;">Forward Pricing</text>
+        <text class="pDesc"   x="594" y="152">Lock the rate for two to three</text>
+        <text class="pDesc"   x="594" y="168">years. Eliminate the renewal.</text>
+
+        <!-- Wire 3-4 -->
+        <line class="pWireDim" x1="806" y1="125" x2="846" y2="125"/>
+        <polygon points="844,120 854,125 844,130" fill="#8A8880"/>
+
+        <!-- Step 4: Exchange -->
+        <rect class="pStepDim" x="854" y="70" width="230" height="110" rx="2"/>
+        <text class="pFut"    x="872" y="96">ENDGAME</text>
+        <text class="pTitle"  x="872" y="128" style="fill:#8A8880;">The Exchange</text>
+        <text class="pDesc"   x="872" y="152">Institutional pricing.</text>
+        <text class="pDesc"   x="872" y="168">Futures and options on healthcare.</text>
+
+        <!-- Bottom annotation -->
+        <text class="pDesc" x="20" y="220" style="fill:#C9B06B; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">
+          Each layer requires the one beneath it. The stack is built from the left.
+        </text>
+      </svg>
+
+      <p class="prose mt-48" style="color:#C7C5BE;">
+        The captive infrastructure already operates. Direct contracting is being written. Forward pricing is the thesis Dutch built his career on. The exchange is the destination. It will not happen next quarter. But every contract MedMerge writes now is a standardized instrument that moves the market one step closer to the only thing it has never had: a price the buyer and the seller both know before the work begins.
+      </p>
+    </div>
+  </section>
+
+  <!-- bridge 10 -> 11 -->
+  <div class="bridge light">
+    <div class="vrule"></div>
+    <q>Who builds the audience for this? Who reaches the physicians?</q>
+    <div class="vrule"></div>
+  </div>
+
   <!-- SECTION INSERTION POINT -->
 
   <!-- =========================================================
@@ -1580,6 +1772,83 @@
             tooltip: {
               callbacks: {
                 label: function (ctx) { return ctx.dataset.label + ': $' + ctx.parsed.x + 'M'; }
+              }
+            }
+          }
+        }
+      });
+    });
+
+    // -------- §9 Forward contract price stability vs renewal volatility --------
+    window.__medmergeCharts.push(function initForwardChart() {
+      const el = document.getElementById('chart-forward');
+      if (!el || !window.Chart) return;
+      const yrs = ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'];
+      const renewal = [100, 114, 108, 126, 119];   // volatile annual resets
+      const forward = [100, 102, 104, 106, 108];    // locked escalator
+      new Chart(el, {
+        type: 'line',
+        data: {
+          labels: yrs,
+          datasets: [
+            {
+              label: 'Annual renewal (carrier-set)',
+              data: renewal,
+              borderColor: BRAND.red,
+              backgroundColor: 'rgba(155, 68, 68, 0.10)',
+              borderWidth: 2,
+              tension: 0.25,
+              fill: true,
+              pointRadius: 5,
+              pointBackgroundColor: BRAND.red,
+              pointBorderColor: '#FAFAF8',
+              pointBorderWidth: 2
+            },
+            {
+              label: 'Forward contract (locked rate)',
+              data: forward,
+              borderColor: BRAND.gold,
+              backgroundColor: 'rgba(201, 176, 107, 0.10)',
+              borderWidth: 2,
+              tension: 0.05,
+              fill: true,
+              pointRadius: 5,
+              pointBackgroundColor: BRAND.gold,
+              pointBorderColor: '#FAFAF8',
+              pointBorderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          scales: {
+            x: {
+              grid: { display: false, drawBorder: false },
+              ticks: { color: '#6B6860', font: { family: "'DM Mono', monospace", size: 11 } }
+            },
+            y: {
+              grid: { color: BRAND.ruleLight, drawBorder: false },
+              min: 80,
+              max: 140,
+              ticks: {
+                color: '#6B6860',
+                font: { family: "'DM Mono', monospace", size: 10 },
+                stepSize: 10,
+                callback: function (v) { return v; }
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+              align: 'start',
+              labels: { color: '#1A1A1A', font: { family: "'DM Mono', monospace", size: 11 } }
+            },
+            tooltip: {
+              callbacks: {
+                label: function (ctx) { return ctx.dataset.label + ': ' + ctx.parsed.y; }
               }
             }
           }
