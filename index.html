@@ -2103,15 +2103,15 @@
   </section>
 
   <!-- =========================================================
-       SECTION 10: KILLING THE RENEWAL CYCLE
+       SECTION 10: THE MULTI-YEAR LOCK (was: Killing the Renewal Cycle)
        ========================================================= -->
   <section class="sec dark">
     <div class="wrap">
-      <span class="eyebrow"><span class="roman">X.</span> Killing the Renewal Cycle</span>
+      <span class="eyebrow"><span class="roman">X.</span> The Multi-Year Lock</span>
       <div class="rule-gold"></div>
-      <h2 class="h-section">The problem with healthcare benefits<br>is that the renewals occur annually.</h2>
+      <h2 class="h-section">The problem with healthcare benefits<br>is that the price resets every twelve months.</h2>
       <p class="lede">
-        Every twelve months the price resets and the party with the most information sets the new number. A forward contract eliminates that leverage by locking the price for two or three years. The employer buys utilization in advance at a known rate. The physician gets revenue certainty. Neither needs the carrier to set the terms.
+        Every twelve months, the entire plan resets. The carrier sets the new number. The party with the most data wins the negotiation. A multi-year price lock takes the renewal off the table. The employer buys utilization in advance at a known rate. The physician gets revenue certainty. Neither needs the carrier to set the terms.
       </p>
 
       <div class="compare">
@@ -2126,7 +2126,7 @@
           </ul>
         </div>
         <div class="col">
-          <span class="tag">Forward contract</span>
+          <span class="tag">Multi-year lock</span>
           <h3 style="font-size:26px;">The physician&#39;s lock</h3>
           <ul>
             <li>Price fixed for two to three years. Both sides agree to the rate and the volume band in advance.</li>
@@ -2142,7 +2142,7 @@
         Emergency room visits are the single most volatile line item in any self-funded health plan. They cannot be scheduled. They cannot be steered at the point of need. They are the cost category that scares every CFO looking at next year&#39;s budget.
       </p>
       <p class="prose" style="color:#C7C5BE;">
-        A self-funded employer with 5,000 covered lives can model approximately 850 ER visits per year using demographic data. A forward contract with a physician-owned micro hospital locks the per-visit price for two to three years. The employer gets cost certainty on the line item that scares them most. The micro hospital ER, which is most of this audience, gets guaranteed volume at a known rate. The carrier loses leverage on the most volatile cost category.
+        A self-funded employer with 5,000 covered lives can model approximately 850 ER visits per year using demographic data. A multi-year lock with a physician-owned micro hospital fixes the per-visit price for two to three years (a forward contract, in commodities terms). The employer gets cost certainty on the line item that scares them most. The micro hospital ER, which is most of this audience, gets guaranteed volume at a known rate. The carrier loses leverage on the most volatile cost category.
       </p>
 
       <div class="stat-grid cols-3">
@@ -2165,13 +2165,17 @@
 
       <h3 class="h-sub">Price stability over time.</h3>
       <p class="prose" style="color:#C7C5BE;">
-        Five years of cost per ER visit modeled two ways: under annual renewal volatility (red) versus a forward-locked rate (gold). The forward does not eliminate cost. It eliminates surprise. The physician plans capacity. The employer plans budget. Both build from a number they already know.
+        Five years of cost per ER visit modeled two ways: under annual renewal volatility (red) versus a multi-year locked rate (gold). The lock does not eliminate cost. It eliminates surprise. The physician plans capacity. The employer plans budget. Both build from a number they already know.
       </p>
 
       <div class="chart-wrap">
-        <canvas id="chart-forward" aria-label="Annual renewal volatility versus forward contract price stability, five years"></canvas>
+        <canvas id="chart-forward" aria-label="Annual renewal volatility versus a multi-year price lock, five years"></canvas>
       </div>
       <div class="chart-caption">Illustrative &middot; Cost per ER visit &middot; Indexed to Year 1 baseline</div>
+
+      <p class="prose mt-48" style="color:#C7C5BE;">
+        Every contract written this way is a standardized instrument. Standardized instruments, at scale, become a market. Healthcare is the largest sector on earth without exchange-based pricing. Each lock written today is one step toward the market healthcare has never had.
+      </p>
     </div>
   </section>
 
@@ -2548,7 +2552,7 @@
               pointBorderColor: '#111', pointBorderWidth: 2
             },
             {
-              label: 'Forward contract (locked rate)',
+              label: 'Multi-year locked rate',
               data: forward,
               borderColor: BRAND.gold,
               backgroundColor: 'rgba(201, 176, 107, 0.10)',
