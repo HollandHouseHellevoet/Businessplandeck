@@ -669,6 +669,33 @@
     .dark .fee-removed-list li { color: #C7C5BE; }
     .light .fee-removed-list li { color: #3A3832; }
 
+    /* --------- Close section (§17) --------- */
+    .close-section {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 96px 0;
+    }
+    .close-wrap {
+      text-align: left;
+      max-width: 1100px;
+    }
+    .close-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(44px, 7.5vw, 110px);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: var(--text-on-dark);
+    }
+    .close-headline .close-q {
+      display: block;
+      margin-top: 36px;
+      font-style: italic;
+      color: var(--gold);
+    }
+
     /* --------- Captive cards (§7) --------- */
     .captive-cards {
       display: grid;
@@ -2286,6 +2313,64 @@
           </p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 16: THE 2029 GRADUATE
+       ========================================================= -->
+  <section class="sec dark">
+    <div class="wrap" style="max-width: 920px;">
+      <span class="eyebrow"><span class="roman">XVI.</span> The 2029 Graduate</span>
+      <div class="rule-gold"></div>
+
+      <div class="quote" style="font-size: clamp(28px, 3.6vw, 44px); color: var(--text-on-dark);">
+        A physician graduates from medical school in 2029.
+      </div>
+
+      <div class="prose mt-32" style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(20px, 2vw, 26px); line-height: 1.45; color: #C7C5BE;">
+        <p>She has $280,000 in debt. She is choosing between employment at a hospital system and independent practice.</p>
+        <p>What would need to exist for her to choose independence?</p>
+      </div>
+
+      <div class="mt-64" style="border-top: 1px solid var(--rule-dark); padding-top: 48px;">
+        <p class="mono" style="font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px;">
+          The answer
+        </p>
+
+        <div class="prose" style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(20px, 2vw, 26px); line-height: 1.45; max-width: 880px; color: var(--text-on-dark);">
+          <p>The intelligence platform that shows her the structural forces working against her.</p>
+          <p>The captive that gives her the economics of a large system without surrendering ownership.</p>
+          <p>The direct contracts that let her set her own prices.</p>
+          <p>The forward contracts that give her revenue certainty.</p>
+          <p>The exchange that institutionalizes transparent pricing.</p>
+          <p>The policy organization fighting to remove the legal barriers.</p>
+          <p>The venture fund investing in the startups that support her practice.</p>
+        </div>
+
+        <div class="mt-64">
+          <p class="mono" style="font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted-dark); margin-bottom: 16px;">
+            Each layer already operates.
+          </p>
+          <p style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(40px, 5.4vw, 72px); line-height: 1.1; color: var(--text-on-dark); letter-spacing: -0.01em;">
+            It exists.<br>
+            It is called <span style="color: var(--gold); font-style: normal;">MedMerge</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 17: THE CLOSE
+       ========================================================= -->
+  <section class="sec dark close-section">
+    <div class="wrap close-wrap">
+      <h2 class="close-headline">
+        You built the hospital.<br>
+        You earned the patients.<br>
+        <span class="close-q">Why does someone else<br>own the economics?</span>
+      </h2>
     </div>
   </section>
 
