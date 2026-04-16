@@ -841,6 +841,254 @@
     <div class="vrule"></div>
   </div>
 
+  <!-- =========================================================
+       SECTION 5: HOW IT WORKS
+       ========================================================= -->
+  <section class="sec light">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">V.</span> How It Works</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">Follow a dollar of premium.<br>Notice where it sleeps.</h2>
+      <p class="lede">
+        A practice spends roughly $20,000 per employee per year on health benefits. The premium is paid up front. Claims are paid later. The distance between those two events is where the money is made. In the traditional model, that distance belongs to a carrier. In the MedMerge model, it belongs to the physicians who paid the premium.
+      </p>
+
+      <svg class="flow-svg" viewBox="0 0 1180 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Premium flow comparison, Today versus Inside the Structure">
+        <defs>
+          <marker id="arrGoldR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#C9B06B"/>
+          </marker>
+          <marker id="arrRedR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#9B4444"/>
+          </marker>
+          <marker id="arrGreenR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#5B8C5B"/>
+          </marker>
+        </defs>
+        <style>
+          .flowBg      { fill: #FFFFFF; stroke: #D9D6CE; stroke-width: 1; }
+          .flowBgRed   { fill: #FFF7F4; stroke: #E6C9C4; stroke-width: 1; }
+          .flowBgGreen { fill: #F2F7F0; stroke: #C9DBC6; stroke-width: 1; }
+          .flowBox     { fill: #FFFFFF; stroke: #1A1A1A; stroke-width: 1; }
+          .flowBoxGold { fill: #FFFFFF; stroke: #C9B06B; stroke-width: 1.25; }
+          .flowLane    { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; fill: #C9B06B; text-transform: uppercase; }
+          .flowTitle   { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 22px; fill: #1A1A1A; }
+          .flowLbl     { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 0.18em; fill: #6B6860; text-transform: uppercase; }
+          .flowAmt     { font-family: 'DM Mono', monospace; font-size: 14px; fill: #1A1A1A; }
+          .flowAmtGold { font-family: 'DM Mono', monospace; font-size: 14px; fill: #C9B06B; }
+          .flowNote    { font-family: 'Libre Baskerville', serif; font-size: 11.5px; fill: #4A4842; font-style: italic; }
+          .flowWire    { stroke: #1A1A1A; stroke-width: 1; fill: none; }
+          .flowWireR   { stroke: #9B4444; stroke-width: 1.25; fill: none; }
+          .flowWireG   { stroke: #5B8C5B; stroke-width: 1.25; fill: none; }
+          .flowWireGold{ stroke: #C9B06B; stroke-width: 1.25; fill: none; }
+          .flowHead    { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 26px; fill: #1A1A1A; }
+          .flowOutLbl  { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; fill: #1A1A1A; text-transform: uppercase; }
+        </style>
+
+        <!-- ================= TODAY lane ================= -->
+        <rect class="flowBgRed" x="20" y="30" width="1140" height="250" rx="2"/>
+        <text class="flowLane" x="40" y="60" style="fill:#9B4444;">LANE A / TODAY</text>
+        <text class="flowHead" x="40" y="90">The carrier keeps the distance.</text>
+
+        <!-- Employer box -->
+        <rect class="flowBox" x="40"  y="150" width="180" height="76"/>
+        <text class="flowLbl" x="56" y="174">Practice / Employer</text>
+        <text class="flowAmt" x="56" y="200">$20,000 premium</text>
+        <text class="flowNote" x="56" y="218">per employee / year</text>
+
+        <!-- Broker -->
+        <line class="flowWireR" x1="220" y1="188" x2="290" y2="188" marker-end="url(#arrRedR)"/>
+        <rect class="flowBox" x="290" y="150" width="150" height="76"/>
+        <text class="flowLbl" x="304" y="174">Broker</text>
+        <text class="flowAmt" x="304" y="200" style="fill:#9B4444;">- commission</text>
+        <text class="flowNote" x="304" y="218">extracted up front</text>
+
+        <!-- Carrier -->
+        <line class="flowWireR" x1="440" y1="188" x2="510" y2="188" marker-end="url(#arrRedR)"/>
+        <rect class="flowBox" x="510" y="150" width="200" height="76"/>
+        <text class="flowLbl" x="526" y="174">Carrier</text>
+        <text class="flowAmt" x="526" y="200" style="fill:#9B4444;">float + surplus kept</text>
+        <text class="flowNote" x="526" y="218">held between premium and claim</text>
+
+        <!-- Claims out -->
+        <line class="flowWireR" x1="710" y1="188" x2="780" y2="188" marker-end="url(#arrRedR)"/>
+        <rect class="flowBox" x="780" y="150" width="160" height="76"/>
+        <text class="flowLbl" x="794" y="174">Claims paid</text>
+        <text class="flowAmt" x="794" y="200">months later</text>
+        <text class="flowNote" x="794" y="218">information asymmetric</text>
+
+        <!-- Net result: leaves the system -->
+        <line class="flowWireR" x1="940" y1="188" x2="1000" y2="188" marker-end="url(#arrRedR)"/>
+        <rect class="flowBoxGold" x="1000" y="150" width="140" height="76" style="stroke:#9B4444;"/>
+        <text class="flowOutLbl" x="1014" y="174" style="fill:#9B4444;">Result</text>
+        <text class="flowAmt" x="1014" y="202" style="fill:#9B4444; font-size:18px;">$2,800</text>
+        <text class="flowNote" x="1014" y="220">leaves per employee</text>
+
+        <text class="flowNote" x="40" y="262" style="fill:#4A4842;">
+          The practice pays premium. The carrier, the broker, and the surplus line all get paid before the physician sees a nickel of what was unused.
+        </text>
+
+        <!-- Divider -->
+        <line x1="20" y1="310" x2="1160" y2="310" stroke="#D9D6CE" stroke-width="1"/>
+        <text class="flowLbl" x="20" y="304" style="fill:#C9B06B; letter-spacing: 0.3em;">VS.</text>
+
+        <!-- ================= INSIDE THE STRUCTURE lane ================= -->
+        <rect class="flowBgGreen" x="20" y="340" width="1140" height="270" rx="2"/>
+        <text class="flowLane" x="40" y="370" style="fill:#1E3D1E;">LANE B / INSIDE THE STRUCTURE</text>
+        <text class="flowHead" x="40" y="400">The captive keeps the distance.</text>
+
+        <!-- Employer -->
+        <rect class="flowBoxGold" x="40"  y="460" width="180" height="76"/>
+        <text class="flowLbl" x="56" y="484">Practice / Employer</text>
+        <text class="flowAmtGold" x="56" y="510">$20,000 premium</text>
+        <text class="flowNote" x="56" y="528">per employee / year</text>
+
+        <!-- Captive -->
+        <line class="flowWireGold" x1="220" y1="498" x2="310" y2="498" marker-end="url(#arrGoldR)"/>
+        <rect class="flowBoxGold" x="310" y="460" width="220" height="76"/>
+        <text class="flowLbl" x="326" y="484">MedMerge captive cell</text>
+        <text class="flowAmtGold" x="326" y="510">self-funded pool</text>
+        <text class="flowNote" x="326" y="528">Montana, protected cell, not a MEWA</text>
+
+        <!-- Float stays -->
+        <line class="flowWireG" x1="530" y1="498" x2="600" y2="498" marker-end="url(#arrGreenR)"/>
+        <rect class="flowBox" x="600" y="460" width="180" height="76" style="stroke:#5B8C5B;"/>
+        <text class="flowLbl" x="616" y="484" style="fill:#1E3D1E;">Float stays inside</text>
+        <text class="flowAmt" x="616" y="510" style="fill:#1E3D1E;">surplus accrues</text>
+        <text class="flowNote" x="616" y="528">on physician balance sheet</text>
+
+        <!-- Broker eliminated -->
+        <line class="flowWireG" x1="780" y1="498" x2="850" y2="498" marker-end="url(#arrGreenR)"/>
+        <rect class="flowBox" x="850" y="460" width="160" height="76" style="stroke:#5B8C5B;">
+        </rect>
+        <text class="flowLbl" x="866" y="484" style="fill:#1E3D1E;">Broker removed</text>
+        <text class="flowAmt" x="866" y="510" style="fill:#1E3D1E;">+ $200 admin</text>
+        <text class="flowNote" x="866" y="528">per-employee savings</text>
+
+        <!-- Result -->
+        <line class="flowWireG" x1="1010" y1="498" x2="1000" y2="498"/>
+        <rect class="flowBoxGold" x="1010" y="460" width="130" height="76" style="stroke:#5B8C5B;"/>
+        <text class="flowOutLbl" x="1024" y="484" style="fill:#1E3D1E;">Result</text>
+        <text class="flowAmt" x="1024" y="512" style="fill:#1E3D1E; font-size:18px;">$3,000</text>
+        <text class="flowNote" x="1024" y="530">stays per employee</text>
+
+        <text class="flowNote" x="40" y="574" style="fill:#4A4842;">
+          Same $20,000 premium. Same claims paid. The carrier margin, the broker commission, and the float income do not vanish. They return to the practice that paid for them.
+        </text>
+      </svg>
+
+      <div class="stat-grid cols-3">
+        <div class="stat">
+          <div class="num" style="color:#9B4444;">$2,800</div>
+          <div class="lbl">Leaves per employee &middot; Today</div>
+          <div class="desc">Broker commission, carrier margin, and retained surplus. Paid annually, never recovered.</div>
+        </div>
+        <div class="stat">
+          <div class="num" style="color:#5B8C5B;">$3,000</div>
+          <div class="lbl">Stays per employee &middot; Inside</div>
+          <div class="desc">Float, surplus, and $200 of admin savings held inside the captive cell owned by the practice.</div>
+        </div>
+        <div class="stat">
+          <div class="num">$5,800</div>
+          <div class="lbl">Net swing per employee</div>
+          <div class="desc">Same premium, same claims, different destination for the unclaimed dollar.</div>
+        </div>
+      </div>
+
+      <p class="prose mt-48">
+        Multiply by a staff of one hundred: a practice moves roughly $580,000 a year from a carrier&rsquo;s balance sheet to its own. Multiply by a physician-owned hospital: the numbers in the next section.
+      </p>
+    </div>
+  </section>
+
+  <!-- bridge 5 -> 6 -->
+  <div class="bridge dark">
+    <div class="vrule"></div>
+    <q>Does this actually work? Show me the claims.</q>
+    <div class="vrule"></div>
+  </div>
+
+  <!-- =========================================================
+       SECTION 6: PROOF OF CONCEPT
+       ========================================================= -->
+  <section class="sec dark">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">VI.</span> Proof of Concept</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">One hospital.<br>Two years.<br>The receipts.</h2>
+      <p class="lede">
+        A single physician-owned hospital moved its health plan inside the MedMerge structure and ran it for twenty-four months. The captive is live. The claims data is real. The chart below is what the stop-loss ratio did over those twenty-four months.
+      </p>
+
+      <div class="stat-grid cols-2">
+        <div class="stat">
+          <div class="num">85%</div>
+          <div class="lbl">Specialty Rx cost reduction</div>
+          <div class="desc">Pharmacy spend on specialty medications, rebuilt from contract upward. High-cost categories rationalized without changing coverage.</div>
+        </div>
+        <div class="stat">
+          <div class="num">106% &rarr; 10%</div>
+          <div class="lbl">Stop-loss ratio, Year 1 to Year 2</div>
+          <div class="desc">A losing program became a surplus-generating program. Underwriting fundamentals stayed the same. The architecture changed.</div>
+        </div>
+        <div class="stat">
+          <div class="num">$453,798</div>
+          <div class="lbl">Total saved across the period</div>
+          <div class="desc">Dollars that would have left the hospital under a carrier plan. Retained on the physician-owned balance sheet.</div>
+        </div>
+        <div class="stat">
+          <div class="num">0%</div>
+          <div class="lbl">Expected renewal increase realized</div>
+          <div class="desc">Market assumption: 25 percent or more rate increase coming into Year 2. Actual result: a flat-rate pass. Headcount grew, PEPM held or declined.</div>
+        </div>
+      </div>
+
+      <h3 class="h-sub">Stop-loss ratio, month by month.</h3>
+      <p class="prose" style="color:#C7C5BE;">
+        Stop-loss ratio is claims paid against claims expected. Above 100 percent, the program is losing money. Under a carrier, that loss is the carrier&rsquo;s gain. Under the MedMerge structure, a falling ratio is retained surplus. This is what a captive looks like when it is working.
+      </p>
+
+      <div class="chart-wrap">
+        <canvas id="chart-lossratio" aria-label="Stop-loss ratio over 24 months, 106 percent to 10 percent"></canvas>
+      </div>
+      <div class="chart-caption">Devin Jenkins case &middot; Physician-owned hospital &middot; 24-month health captive run</div>
+
+      <div class="compare mt-64">
+        <div class="col">
+          <span class="tag">Before</span>
+          <h3 style="font-size:26px;">Carrier program</h3>
+          <ul>
+            <li>Loss ratio above 100 percent. Program bleeding.</li>
+            <li>Specialty Rx billed at rack rate. Rebates opaque.</li>
+            <li>Renewal forecast: 25 percent or more rate increase.</li>
+            <li>Surplus, if any, retained by the carrier.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <span class="tag">After</span>
+          <h3 style="font-size:26px;">Inside the captive</h3>
+          <ul>
+            <li>Stop-loss ratio settled at 10 percent by Month 24.</li>
+            <li>Specialty Rx rebuilt from contract up. 85 percent reduction.</li>
+            <li>Renewal: rate pass. Headcount up. PEPM stable or lower.</li>
+            <li>$453,798 retained on the physician-owned balance sheet.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="prose mt-48" style="color:#C7C5BE;">
+        The health benefits captive is live. The claims data is available to qualified diligence. This is not a pilot with a pitch deck. It is an operating book of business that proves the thesis for one hospital. What stops it from proving the thesis for fifty?
+      </p>
+    </div>
+  </section>
+
+  <!-- bridge 6 -> 7 -->
+  <div class="bridge light">
+    <div class="vrule"></div>
+    <q>This works for one hospital. What happens at scale?</q>
+    <div class="vrule"></div>
+  </div>
+
   <!-- SECTION INSERTION POINT -->
 
   <!-- =========================================================
@@ -955,6 +1203,78 @@
             tooltip: {
               callbacks: {
                 label: function (ctx) { return ctx.dataset.label + ': $' + ctx.parsed.y.toLocaleString(); }
+              }
+            }
+          }
+        }
+      });
+    });
+
+    // -------- §6 Stop-loss ratio over 24 months --------
+    window.__medmergeCharts.push(function initLossRatioChart() {
+      const el = document.getElementById('chart-lossratio');
+      if (!el || !window.Chart) return;
+      const labels = Array.from({length: 24}, function (_, i) { return 'M' + (i + 1); });
+      const ratio  = [106, 104, 101, 96, 90, 83, 76, 69, 61, 53, 46, 40, 34, 29, 25, 22, 19, 17, 15, 13, 12, 11, 10, 10];
+      new Chart(el, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Stop-loss ratio (%)',
+              data: ratio,
+              borderColor: BRAND.gold,
+              backgroundColor: 'rgba(201, 176, 107, 0.12)',
+              borderWidth: 2,
+              tension: 0.32,
+              fill: true,
+              pointRadius: 0,
+              pointHoverRadius: 5,
+              pointHoverBackgroundColor: BRAND.gold,
+              pointHoverBorderColor: '#111'
+            },
+            {
+              label: 'Break-even (100%)',
+              data: Array(24).fill(100),
+              borderColor: BRAND.red,
+              borderWidth: 1,
+              borderDash: [4, 4],
+              pointRadius: 0,
+              fill: false
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          scales: {
+            x: {
+              grid: { display: false, drawBorder: false },
+              ticks: { color: BRAND.muted, font: { family: "'DM Mono', monospace", size: 10 }, maxRotation: 0, autoSkip: true, autoSkipPadding: 16 }
+            },
+            y: {
+              grid: { color: BRAND.ruleDark, drawBorder: false },
+              min: 0,
+              max: 120,
+              ticks: {
+                color: BRAND.muted,
+                font: { family: "'DM Mono', monospace", size: 10 },
+                stepSize: 20,
+                callback: function (v) { return v + '%'; }
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+              align: 'start',
+              labels: { color: BRAND.ink, font: { family: "'DM Mono', monospace", size: 11 } }
+            },
+            tooltip: {
+              callbacks: {
+                label: function (ctx) { return ctx.dataset.label + ': ' + ctx.parsed.y + '%'; }
               }
             }
           }
