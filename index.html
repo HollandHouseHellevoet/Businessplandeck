@@ -857,6 +857,9 @@
     }
     .light .cap-row-fact { color: #3A3832; }
     .dark  .cap-row-fact { color: #C7C5BE; }
+    .cap-row.secondary .cap-row-val { font-size: 15px; opacity: 0.82; }
+    .cap-row.secondary .cap-row-fact { font-size: 12.5px; opacity: 0.75; }
+    .cap-row.secondary .cap-row-lbl { opacity: 0.75; }
     @media (max-width: 900px) {
       .captive-cards { grid-template-columns: 1fr; }
     }
@@ -1895,16 +1898,15 @@
         This is a homogeneous captive, built exclusively for healthcare professionals: physician-owned hospitals and medical practices with fifty or more employees. Member selection is the moat. Every participant shares the same risk profile, the same operating posture, and the same regulatory horizon. Not a generic group captive. The homogeneity is the product.
       </p>
 
+      <p class="prose" style="font-size: clamp(18px, 1.6vw, 22px); line-height: 1.45; font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; color: #1A1A1A; margin: 40px 0 24px; max-width: 880px;">
+        The capital required to stand up all three captives is meaningfully less than what a single mid-sized facility leaks to outside carriers in a single year. The math of the build is funded by the math of the leak.
+      </p>
+
       <div class="captive-cards">
         <div class="cap-card">
           <span class="cap-status locked">Captive I &middot; Locked</span>
           <h3 class="cap-title">Health Benefits</h3>
           <div class="cap-rows">
-            <div class="cap-row">
-              <span class="cap-row-lbl">Capital required</span>
-              <div class="cap-row-val">$6M to $9M</div>
-              <div class="cap-row-fact">Mostly covered by float and pre-funding inside the cell.</div>
-            </div>
             <div class="cap-row">
               <span class="cap-row-lbl">Premium at scale</span>
               <div class="cap-row-val">$45M to $70M</div>
@@ -1914,6 +1916,11 @@
               <span class="cap-row-lbl">Key fact</span>
               <div class="cap-row-fact">Operating today. Self-funded ERISA plan with bespoke fee schedules adjudicating through Aetna, UMR, and Meritain.</div>
             </div>
+            <div class="cap-row secondary">
+              <span class="cap-row-lbl">Capital required</span>
+              <div class="cap-row-val">$6M to $9M</div>
+              <div class="cap-row-fact">Mostly covered by float and pre-funding inside the cell.</div>
+            </div>
           </div>
         </div>
 
@@ -1921,11 +1928,6 @@
           <span class="cap-status next">Captive II &middot; Next</span>
           <h3 class="cap-title">Property &amp; Casualty</h3>
           <div class="cap-rows">
-            <div class="cap-row">
-              <span class="cap-row-lbl">Capital required</span>
-              <div class="cap-row-val">$4M to $6M</div>
-              <div class="cap-row-fact">Across property, GL, workers comp, umbrella, and the surrounding lines.</div>
-            </div>
             <div class="cap-row">
               <span class="cap-row-lbl">Premium at scale</span>
               <div class="cap-row-val">$25M to $40M</div>
@@ -1935,6 +1937,11 @@
               <span class="cap-row-lbl">Key fact</span>
               <div class="cap-row-fact">Filings complete. Onboarding cohort lined up. Twelve-month build window from activation.</div>
             </div>
+            <div class="cap-row secondary">
+              <span class="cap-row-lbl">Capital required</span>
+              <div class="cap-row-val">$4M to $6M</div>
+              <div class="cap-row-fact">Across property, GL, workers comp, umbrella, and the surrounding lines.</div>
+            </div>
           </div>
         </div>
 
@@ -1943,11 +1950,6 @@
           <h3 class="cap-title">Medical Malpractice</h3>
           <div class="cap-rows">
             <div class="cap-row">
-              <span class="cap-row-lbl">Capital required</span>
-              <div class="cap-row-val">$10M to $15M</div>
-              <div class="cap-row-fact">Anchor capital. Reinsurance-heavy in year one. Retention climbs with credibility.</div>
-            </div>
-            <div class="cap-row">
               <span class="cap-row-lbl">Premium at scale</span>
               <div class="cap-row-val">$40M to $60M</div>
               <div class="cap-row-fact">Highest premium per facility, longest tail, most reinsurance discipline required.</div>
@@ -1955,6 +1957,11 @@
             <div class="cap-row">
               <span class="cap-row-lbl">Key fact</span>
               <div class="cap-row-fact">Built last on purpose. Discipline over speed. Year 2-plus activation, after the operating book proves out.</div>
+            </div>
+            <div class="cap-row secondary">
+              <span class="cap-row-lbl">Capital required</span>
+              <div class="cap-row-val">$10M to $15M</div>
+              <div class="cap-row-fact">Anchor capital. Reinsurance-heavy in year one. Retention climbs with credibility.</div>
             </div>
           </div>
         </div>
