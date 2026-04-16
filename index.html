@@ -350,6 +350,27 @@
     }
     .kf-table td { line-height: 1.55; }
 
+    /* --------- Gold-on-light contrast overrides (fix 9) --------- */
+    .light .eyebrow,
+    .light .roman,
+    .light .gold,
+    .light .kf-table th,
+    .light .quote .q-mark,
+    .light .quote em { color: var(--gold-ink); }
+    .light .stat .num { color: var(--gold-ink); }
+    .light .compare .tag,
+    .light .compare .col .tag,
+    .light .priority-tag { color: var(--gold-ink); }
+    .light .priority-num { color: var(--gold-ink); }
+    .bridge.light q,
+    .bridge.light .q { color: var(--gold-ink); }
+    .bridge.light .vrule { background: var(--gold-ink); }
+    .light .stat .lbl,
+    .light .chart-caption { color: var(--muted-light); }
+    /* inline gold styles inside compare panels and misc */
+    .light [style*="color:#C9B06B"],
+    .light [style*="color: #C9B06B"] { color: var(--gold-ink) !important; }
+
     /* --------- Desktop / mobile visibility switches --------- */
     .mobile-only { display: none; }
     .desktop-only { display: block; }
@@ -417,6 +438,134 @@
     }
     .dark .flow-stack-note { color: var(--gold); background: rgba(201,176,107,0.05); }
     .light .flow-stack-note { color: var(--gold-ink); background: rgba(122,99,46,0.04); }
+
+    /* --------- Entity stack (§13 and §14 mobile) --------- */
+    .entity-stack { margin: 32px 0; display: flex; flex-direction: column; gap: 12px; }
+    .entity-card {
+      background: var(--light-card);
+      border: 1px solid var(--rule-light);
+      padding: 22px 24px;
+      border-radius: 2px;
+    }
+    .dark .entity-card {
+      background: var(--dark-card);
+      border-color: var(--rule-dark);
+    }
+    .entity-card .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .entity-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .light .entity-card h4 { color: #1A1A1A; }
+    .dark  .entity-card h4 { color: #E8E6E0; }
+    .entity-card p { font-size: 14px; line-height: 1.55; }
+    .light .entity-card p { color: #3A3832; }
+    .dark  .entity-card p { color: #C7C5BE; }
+
+    /* --------- §5 premium-flow mobile version --------- */
+    .premium-flow-mobile { margin: 32px 0; }
+    .pfm-lane {
+      background: #FFFFFF;
+      border: 1px solid var(--rule-light);
+      border-radius: 2px;
+      padding: 24px 20px;
+    }
+    .pfm-lane.pfm-today { border-color: #E6C9C4; background: #FFF7F4; }
+    .pfm-lane.pfm-inside { border-color: #C9DBC6; background: #F2F7F0; }
+    .pfm-lane-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-ink);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .pfm-lane h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #1A1A1A;
+    }
+    .pfm-step {
+      background: #FFFFFF;
+      border: 1px solid var(--rule-light);
+      padding: 14px 16px;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .pfm-step-lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #6B6860;
+    }
+    .pfm-step-val {
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      color: #1A1A1A;
+    }
+    .pfm-arrow {
+      text-align: center;
+      font-size: 16px;
+      line-height: 1;
+      margin: 6px 0;
+      color: var(--gold-ink);
+    }
+    .pfm-result {
+      margin-top: 12px;
+      padding: 20px;
+      border: 1.5px solid;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .pfm-result-bad  { border-color: #9B4444; background: #FFFFFF; }
+    .pfm-result-good { border-color: #5B8C5B; background: #FFFFFF; }
+    .pfm-result-lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .pfm-result-bad .pfm-result-lbl  { color: #9B4444; }
+    .pfm-result-good .pfm-result-lbl { color: #1E3D1E; }
+    .pfm-result-amt {
+      font-family: 'DM Mono', monospace;
+      font-size: 30px;
+      line-height: 1;
+    }
+    .pfm-result-bad .pfm-result-amt  { color: #9B4444; }
+    .pfm-result-good .pfm-result-amt { color: #1E3D1E; }
+    .pfm-result-note {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: #4A4842;
+    }
+    .pfm-vs {
+      text-align: center;
+      margin: 20px 0;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: var(--gold-ink);
+    }
 
     /* --------- Priority stack (§12) --------- */
     .priority-stack {
@@ -573,10 +722,12 @@
     .muted-l { color: var(--muted-light); }
 
     /* --------- Responsive --------- */
+    .compare.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
     @media (max-width: 980px) {
       .wrap { padding: 0 40px; }
       .stat-grid { grid-template-columns: repeat(2, 1fr); }
-      .compare { grid-template-columns: 1fr; }
+      .compare,
+      .compare.cols-3 { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
       .wrap { padding: 0 24px; }
@@ -993,6 +1144,7 @@
         A practice spends roughly $20,000 per employee per year on health benefits. The premium is paid up front. Claims are paid later. The distance between those two events is where the money is made. In the traditional model, that distance belongs to a carrier. In the MedMerge model, it belongs to the physicians who paid the premium.
       </p>
 
+      <div class="desktop-only">
       <svg class="flow-svg" viewBox="0 0 1180 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Premium flow comparison, Today versus Inside the Structure">
         <defs>
           <marker id="arrGoldR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
@@ -1116,6 +1268,48 @@
           Same $20,000 premium. Same claims paid. The carrier margin, the broker commission, and the float income do not vanish. They return to the practice that paid for them.
         </text>
       </svg>
+      </div>
+
+      <!-- §5 mobile: stacked premium-flow comparison -->
+      <div class="mobile-only premium-flow-mobile">
+        <div class="pfm-lane pfm-today">
+          <span class="pfm-lane-tag" style="color:#9B4444;">LANE A &middot; Today</span>
+          <h4>The carrier keeps the distance.</h4>
+          <div class="pfm-step"><span class="pfm-step-lbl">Practice / Employer</span><span class="pfm-step-val">$20,000 premium</span></div>
+          <div class="pfm-arrow">&darr;</div>
+          <div class="pfm-step"><span class="pfm-step-lbl">Broker</span><span class="pfm-step-val" style="color:#9B4444;">Commission extracted</span></div>
+          <div class="pfm-arrow">&darr;</div>
+          <div class="pfm-step"><span class="pfm-step-lbl">Carrier</span><span class="pfm-step-val" style="color:#9B4444;">Float &amp; surplus kept</span></div>
+          <div class="pfm-arrow">&darr;</div>
+          <div class="pfm-step"><span class="pfm-step-lbl">Claims paid</span><span class="pfm-step-val">Months later</span></div>
+          <div class="pfm-arrow">&darr;</div>
+          <div class="pfm-result pfm-result-bad">
+            <span class="pfm-result-lbl">Result</span>
+            <span class="pfm-result-amt">$2,800</span>
+            <span class="pfm-result-note">leaves per employee</span>
+          </div>
+        </div>
+
+        <div class="pfm-vs">VS.</div>
+
+        <div class="pfm-lane pfm-inside">
+          <span class="pfm-lane-tag">LANE B &middot; Inside the Structure</span>
+          <h4>The captive keeps the distance.</h4>
+          <div class="pfm-step"><span class="pfm-step-lbl">Practice / Employer</span><span class="pfm-step-val" style="color:var(--gold-ink);">$20,000 premium</span></div>
+          <div class="pfm-arrow">&darr;</div>
+          <div class="pfm-step"><span class="pfm-step-lbl">MedMerge captive cell</span><span class="pfm-step-val" style="color:var(--gold-ink);">Self-funded pool</span></div>
+          <div class="pfm-arrow">&darr;</div>
+          <div class="pfm-step"><span class="pfm-step-lbl">Float stays inside</span><span class="pfm-step-val" style="color:#1E3D1E;">Surplus accrues</span></div>
+          <div class="pfm-arrow">&darr;</div>
+          <div class="pfm-step"><span class="pfm-step-lbl">Broker removed</span><span class="pfm-step-val" style="color:#1E3D1E;">+ $200 admin</span></div>
+          <div class="pfm-arrow">&darr;</div>
+          <div class="pfm-result pfm-result-good">
+            <span class="pfm-result-lbl">Result</span>
+            <span class="pfm-result-amt">$3,000</span>
+            <span class="pfm-result-note">stays per employee</span>
+          </div>
+        </div>
+      </div>
 
       <div class="stat-grid cols-3">
         <div class="stat">
@@ -1278,7 +1472,7 @@
         Not every dollar of premium is retained. Retention is the lever. The three captives sit at different points on the retain-blend-reinsure spectrum, and they move along it as the book matures.
       </p>
 
-      <div class="compare" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="compare cols-3">
         <div class="col">
           <span class="tag">Captive I &middot; Live</span>
           <h3 style="font-size:24px;">Health Benefits</h3>
@@ -1309,6 +1503,7 @@
       </div>
 
       <h3 class="h-sub">Build order.</h3>
+      <div class="desktop-only">
       <svg class="diagram-svg" viewBox="0 0 1100 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three-captive build timeline">
         <style>
           .tlRule { stroke: #D9D6CE; stroke-width: 1; }
@@ -1340,6 +1535,24 @@
         <text class="tlLbl"   x="920" y="120" text-anchor="middle">Captive III</text>
         <text class="tlTitle" x="920" y="144" text-anchor="middle">Medical Malpractice</text>
       </svg>
+      </div>
+
+      <div class="mobile-only flow-stack">
+        <div class="flow-stack-step highlight">
+          <span class="tag" style="color: var(--gold-ink);">Now &middot; Live</span>
+          <h4>Captive I &middot; Health Benefits</h4>
+        </div>
+        <div class="flow-stack-arrow">&darr;</div>
+        <div class="flow-stack-step">
+          <span class="tag" style="color: var(--gold-ink);">Next 12 months</span>
+          <h4>Captive II &middot; Property &amp; Casualty</h4>
+        </div>
+        <div class="flow-stack-arrow">&darr;</div>
+        <div class="flow-stack-step">
+          <span class="tag" style="color: var(--muted-light);">Year 2+</span>
+          <h4>Captive III &middot; Medical Malpractice</h4>
+        </div>
+      </div>
 
       <p class="prose mt-48">
         The captives capture the premium. But a captive, by itself, is a container. What fills it is the price the physician gets paid for the work.
@@ -1608,6 +1821,7 @@
         You cannot build an exchange without standardized contracts. You cannot write standardized contracts without forward pricing. You cannot offer forward pricing without direct contracting. You cannot do direct contracting at scale without captive infrastructure. MedMerge is building the stack from the bottom up. The exchange is the endgame. Every layer beneath it is live or in development.
       </p>
 
+      <div class="desktop-only">
       <svg class="diagram-svg" viewBox="0 0 1100 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Progression from captives to exchange">
         <style>
           .pStepOn  { fill: #1A1A1A; stroke: #C9B06B; stroke-width: 1.25; }
@@ -1668,6 +1882,34 @@
           Each layer requires the one beneath it. The stack is built from the left.
         </text>
       </svg>
+      </div>
+
+      <div class="mobile-only flow-stack">
+        <div class="flow-stack-step highlight">
+          <span class="tag" style="color:#5B8C5B;">Live</span>
+          <h4>1 &middot; Captive Insurance</h4>
+          <p>Pool risk. Capture float. Retain surplus on the physician balance sheet.</p>
+        </div>
+        <div class="flow-stack-arrow">&darr;</div>
+        <div class="flow-stack-step highlight">
+          <span class="tag" style="color: var(--gold);">Building</span>
+          <h4>2 &middot; Direct Contracts</h4>
+          <p>Remove the carrier. Set the rate between two parties.</p>
+        </div>
+        <div class="flow-stack-arrow">&darr;</div>
+        <div class="flow-stack-step">
+          <span class="tag" style="color: var(--gold);">Next</span>
+          <h4>3 &middot; Forward Pricing</h4>
+          <p>Lock the rate for two to three years. Eliminate the renewal.</p>
+        </div>
+        <div class="flow-stack-arrow">&darr;</div>
+        <div class="flow-stack-step">
+          <span class="tag" style="color:#8A8880;">Endgame</span>
+          <h4>4 &middot; The Exchange</h4>
+          <p>Institutional pricing. Futures and options on healthcare.</p>
+        </div>
+        <div class="flow-stack-note">Each layer requires the one before it. The stack is built from the top.</div>
+      </div>
 
       <p class="prose mt-48" style="color:#C7C5BE;">
         The captive infrastructure already operates. Direct contracting is being written. Forward pricing is the thesis Dutch built his career on. The exchange is the destination. It will not happen next quarter. But every contract MedMerge writes now is a standardized instrument that moves the market one step closer to the only thing it has never had: a price the buyer and the seller both know before the work begins.
@@ -1986,6 +2228,7 @@
         The diagram below shows the four entities and how capital, intelligence, and deal flow move between them. This is not a corporate org chart. It is a network with feedback loops.
       </p>
 
+      <div class="desktop-only">
       <svg class="diagram-svg" viewBox="0 0 1100 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four-entity ecosystem: Rojas Report, MedMerge, PhyCap, PHA">
         <style>
           .ecBox    { fill: #FFFFFF; stroke: #C9B06B; stroke-width: 1.25; }
@@ -2057,6 +2300,33 @@
         <line class="ecWireDim" x1="780" y1="170" x2="320" y2="270" marker-end="url(#arrDimEc)"/>
         <text class="ecFlowLbl" x="540" y="234" text-anchor="middle" transform="rotate(-12 540 234)">PROOF FOR POLICY</text>
       </svg>
+      </div>
+
+      <div class="mobile-only entity-stack">
+        <div class="entity-card">
+          <span class="tag" style="color: var(--gold-ink);">Intelligence</span>
+          <h4>The Rojas Report</h4>
+          <p>Frameworks. Daily thesis. 100K+ physician audience.</p>
+        </div>
+        <div class="entity-card">
+          <span class="tag" style="color: var(--gold-ink);">Infrastructure</span>
+          <h4>MedMerge</h4>
+          <p>Captive. Contracting. Payroll. Benefits. Scale.</p>
+        </div>
+        <div class="entity-card">
+          <span class="tag" style="color: var(--gold-ink);">Policy</span>
+          <h4>PHA</h4>
+          <p>Legislative scorecard. 6001 repeal. CON reform.</p>
+        </div>
+        <div class="entity-card">
+          <span class="tag" style="color: var(--gold-ink);">Capital</span>
+          <h4>PhyCap Fund</h4>
+          <p>Physician-led VC. Thesis-aligned deal flow.</p>
+        </div>
+        <div class="flow-stack-note">
+          Trust drives adoption. Deal flow runs through the platform. Operating proof feeds policy. LP capital comes from the same audience.
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2079,6 +2349,7 @@
         The Rojas Report generates intelligence that earns trust and builds audience. MedMerge serves that audience with operational infrastructure, generating proof cases that feed back into the intelligence platform. PhyCap Fund invests in the builders of the independent economy, using the platform for deal flow and capital formation. PHA leverages the intelligence and audience to drive policy changes that expand the addressable market. Direct contracting, forward contracts, and the exchange are the economic layers that make the flywheel self-sustaining.
       </p>
 
+      <div class="desktop-only">
       <svg class="diagram-svg" viewBox="0 0 1100 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Full MedMerge ecosystem flywheel with feedback loops">
         <style>
           .fhBox     { fill: #1A1A1A; stroke: #C9B06B; stroke-width: 1.25; }
@@ -2195,6 +2466,54 @@
         <line class="fhWireG" x1="550" y1="636" x2="550" y2="550" marker-end="url(#arrGreenFh)" stroke-dasharray="4 3"/>
         <text class="fhFlowLblG" x="560" y="596">SUSTAINS THE FLYWHEEL</text>
       </svg>
+      </div>
+
+      <div class="mobile-only entity-stack">
+        <div class="entity-card" style="border-color: var(--gold);">
+          <span class="tag" style="color: var(--gold);">Intelligence</span>
+          <h4>The Rojas Report</h4>
+          <p>Frameworks, daily thesis, 100K+ physician audience.</p>
+        </div>
+        <div class="flow-stack-arrow">&darr;</div>
+        <div class="entity-card" style="border-color: var(--gold);">
+          <span class="tag" style="color: var(--gold);">Infrastructure</span>
+          <h4>MedMerge</h4>
+          <p>Captive cells, direct contracts, benefits, payroll.</p>
+        </div>
+        <div class="flow-stack-arrow">&darr;</div>
+        <div class="entity-card" style="border-color: var(--gold);">
+          <span class="tag" style="color: var(--gold);">Capital</span>
+          <h4>PhyCap Fund</h4>
+          <p>Physician-led venture capital. Thesis-aligned deal flow.</p>
+        </div>
+        <div class="flow-stack-arrow">&darr;</div>
+        <div class="entity-card" style="border-color: var(--gold);">
+          <span class="tag" style="color: var(--gold);">Policy</span>
+          <h4>PHA</h4>
+          <p>Scorecard methodology, 6001 repeal, CON reform, nonprofit accountability.</p>
+        </div>
+        <div class="flow-stack-note" style="margin-top: 20px;">
+          The loop returns: proof and portfolio feed intelligence. The flywheel compounds.
+        </div>
+
+        <h4 class="mt-48" style="font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #5B8C5B; margin: 32px 0 16px;">
+          Economic layers sustaining the flywheel
+        </h4>
+        <div class="entity-card" style="border-color:#5B8C5B;">
+          <h4>Direct Contracts &middot; live</h4>
+          <p>Price set between two parties. No carrier intermediary.</p>
+        </div>
+        <div class="flow-stack-arrow" style="color:#5B8C5B;">&darr;</div>
+        <div class="entity-card" style="border-color:#5B8C5B;">
+          <h4>Forward Contracts &middot; next</h4>
+          <p>Multi-year price lock. Renewal cycle eliminated.</p>
+        </div>
+        <div class="flow-stack-arrow" style="color:#5B8C5B;">&darr;</div>
+        <div class="entity-card" style="border-color: var(--muted-light);">
+          <h4>The Exchange &middot; endgame</h4>
+          <p>Institutional pricing. Healthcare&rsquo;s first real commodity market.</p>
+        </div>
+      </div>
 
       <div class="prose mt-48" style="color:#C7C5BE;">
         <p>This is not a slide with arrows drawn after the fact. Every connection in the diagram above is an operating relationship. The Rojas Report already publishes daily. MedMerge already runs a captive. PHA already scores legislators. PhyCap already deploys capital. The flywheel is not planned. It is turning.</p>
@@ -2313,7 +2632,7 @@
       </table>
 
       <h3 class="h-sub">The moats.</h3>
-      <div class="compare" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="compare cols-3">
         <div class="col">
           <span class="tag">Moat I</span>
           <h3 style="font-size:24px;">Distribution</h3>
