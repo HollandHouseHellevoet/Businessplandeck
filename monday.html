@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MedMerge | Nutex Leadership Brief &middot; April 2026</title>
+  <meta name="description" content="MedMerge. Captive insurance infrastructure for independent physician-owned hospital systems. Confidential briefing for Nutex Health leadership.">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #111;
+      --light: #FAFAF8;
+      --gold: #C9B06B;
+      --gold-dim: #8E7A47;
+      --gold-ink: #7A632E;
+      --green: #5B8C5B;
+      --green-deep: #1E3D1E;
+      --red: #9B4444;
+      --red-deep: #5C2020;
+      --dark-card: #1A1A1A;
+      --light-card: #FFFFFF;
+      --text-on-dark: #E8E6E0;
+      --text-on-light: #1A1A1A;
+      --rule-dark: #262626;
+      --rule-light: #D9D6CE;
+      --muted-dark: #8A8880;
+      --muted-light: #6B6860;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.65;
+      font-size: 17px;
+      color: var(--text-on-light);
+      background: var(--light);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+    p { margin-bottom: 1.1em; }
+    p:last-child { margin-bottom: 0; }
+    a { color: inherit; }
+
+    .mono {
+      font-family: 'DM Mono', 'Courier New', monospace;
+      font-weight: 400;
+    }
+
+    .sec {
+      padding: 140px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .sec.dark { background: var(--dark); color: var(--text-on-dark); }
+    .sec.light { background: var(--light); color: var(--text-on-light); }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 64px;
+    }
+
+    .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+      display: block;
+    }
+
+    .h-section {
+      font-size: clamp(48px, 6.2vw, 84px);
+      margin-bottom: 48px;
+      letter-spacing: -0.015em;
+    }
+
+    .h-sub {
+      font-size: clamp(28px, 3.4vw, 42px);
+      margin: 48px 0 24px;
+      font-weight: 300;
+    }
+
+    .lede {
+      font-size: clamp(19px, 1.6vw, 22px);
+      line-height: 1.55;
+      max-width: 860px;
+      margin-bottom: 56px;
+      color: inherit;
+    }
+    .dark .lede { color: #CFCDC6; }
+    .light .lede { color: #2F2D28; }
+
+    .prose { max-width: 740px; }
+    .prose p { margin-bottom: 1.2em; font-size: 17px; }
+
+    .rule-gold { width: 56px; height: 1px; background: var(--gold); margin: 0 0 32px; }
+
+    /* --------- Cover --------- */
+    .cover {
+      min-height: 100vh;
+      background: var(--dark);
+      color: var(--text-on-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 56px 64px;
+      position: relative;
+    }
+    .cover .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .cover .top-bar .mark {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--gold);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      line-height: 1;
+    }
+    .cover .center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 1180px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .cover h1 {
+      font-size: clamp(72px, 13vw, 184px);
+      letter-spacing: -0.02em;
+      line-height: 0.92;
+      margin-bottom: 36px;
+    }
+    .cover .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(24px, 3vw, 36px);
+      color: var(--gold);
+      max-width: 760px;
+      line-height: 1.25;
+    }
+    .cover .tagline-note {
+      margin-top: 28px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted-dark);
+    }
+    .cover .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted-dark);
+    }
+    .cover .bottom .conf { max-width: 540px; line-height: 1.7; }
+
+    /* --------- Stat grids --------- */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin: 48px 0;
+    }
+    .stat-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .stat-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .dark .stat-grid { background: var(--rule-dark); }
+    .light .stat-grid { background: var(--rule-light); }
+    .stat { padding: 40px 32px; }
+    .dark .stat { background: var(--dark-card); }
+    .light .stat { background: var(--light-card); }
+    .stat .num {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(36px, 3.6vw, 52px);
+      line-height: 1;
+      color: var(--gold);
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+    .stat .lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .dark .stat .lbl { color: var(--muted-dark); }
+    .light .stat .lbl { color: var(--muted-light); }
+    .stat .desc {
+      margin-top: 18px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .dark .stat .desc { color: #C7C5BE; }
+    .light .stat .desc { color: #3A3832; }
+
+    /* --------- Gold-on-light contrast overrides --------- */
+    .light .eyebrow,
+    .light .roman,
+    .light .gold { color: var(--gold-ink); }
+    .light .stat .num { color: var(--gold-ink); }
+
+    /* --------- Checks list --------- */
+    .checks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--rule-light);
+      margin: 48px 0 32px;
+      border-top: 1px solid var(--rule-light);
+      border-bottom: 1px solid var(--rule-light);
+    }
+    .dark .checks-list {
+      background: var(--rule-dark);
+      border-color: var(--rule-dark);
+    }
+    .check-row {
+      background: var(--light-card);
+      padding: 22px 28px;
+      display: grid;
+      grid-template-columns: 56px 1fr auto;
+      gap: 24px;
+      align-items: baseline;
+    }
+    .dark .check-row { background: var(--dark-card); }
+    .check-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      color: var(--gold-ink);
+    }
+    .dark .check-num { color: var(--gold); }
+    .check-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(20px, 2vw, 26px);
+      line-height: 1.15;
+      letter-spacing: -0.005em;
+    }
+    .light .check-name { color: #1A1A1A; }
+    .dark  .check-name { color: #E8E6E0; }
+    .check-amt {
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .light .check-amt { color: #4A4842; }
+    .dark  .check-amt { color: #C7C5BE; }
+    @media (max-width: 640px) {
+      .check-row {
+        grid-template-columns: 36px 1fr;
+        padding: 18px 18px;
+        gap: 14px;
+        row-gap: 4px;
+      }
+      .check-amt {
+        grid-column: 2 / 3;
+        font-size: 12px;
+      }
+      .check-name { font-size: 19px; }
+    }
+
+    /* --------- Destination buckets --------- */
+    .destinations {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--rule-dark);
+      margin: 48px 0 56px;
+    }
+    .light .destinations { background: var(--rule-light); }
+    .dest-card {
+      background: var(--dark-card);
+      padding: 28px 22px;
+    }
+    .light .dest-card { background: var(--light-card); }
+    .dest-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .light .dest-tag { color: var(--gold-ink); }
+    .dest-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .dark .dest-name { color: #E8E6E0; }
+    .light .dest-name { color: #1A1A1A; }
+    .dest-note {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    .dark .dest-note { color: #8A8880; }
+    .light .dest-note { color: var(--muted-light); }
+    @media (max-width: 980px) {
+      .destinations { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .destinations { grid-template-columns: 1fr; }
+    }
+
+    /* --------- Entity / statement cards (§IV, §V) --------- */
+    .entity-stack { margin: 32px 0; display: flex; flex-direction: column; gap: 12px; }
+    .entity-card {
+      background: var(--light-card);
+      border: 1px solid var(--rule-light);
+      padding: 22px 24px;
+      border-radius: 2px;
+    }
+    .dark .entity-card {
+      background: var(--dark-card);
+      border-color: var(--rule-dark);
+    }
+    .entity-card .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .entity-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .light .entity-card h4 { color: #1A1A1A; }
+    .dark  .entity-card h4 { color: #E8E6E0; }
+    .entity-card p { font-size: 14px; line-height: 1.55; }
+    .light .entity-card p { color: #3A3832; }
+    .dark  .entity-card p { color: #C7C5BE; }
+
+    /* --------- Team grid (appendix) --------- */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--rule-light);
+      margin: 32px 0;
+    }
+    .team-grid.advisors { grid-template-columns: repeat(4, 1fr); }
+    .team-card {
+      background: var(--light-card);
+      padding: 36px 32px;
+    }
+    .team-card.compact { padding: 28px 24px; }
+    .team-card h3 { font-weight: 300; line-height: 1.2; }
+    .team-card .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px;
+    }
+    @media (max-width: 900px) {
+      .team-grid, .team-grid.advisors { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .team-grid, .team-grid.advisors { grid-template-columns: 1fr; }
+    }
+
+    /* --------- Footer --------- */
+    footer.deck-footer {
+      background: var(--dark);
+      color: var(--text-on-dark);
+      padding: 96px 64px 72px;
+      text-align: center;
+    }
+    footer.deck-footer .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 44px;
+      letter-spacing: -0.01em;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    footer.deck-footer .conf {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted-dark);
+      line-height: 1.9;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    footer.deck-footer .contact {
+      margin-top: 36px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    footer.deck-footer .contact span { margin: 0 14px; color: var(--muted-dark); }
+    footer.deck-footer a { color: var(--gold); text-decoration: none; }
+    footer.deck-footer .year {
+      margin-top: 48px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      color: var(--muted-dark);
+    }
+
+    /* --------- Numbered Roman eyebrow --------- */
+    .roman {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--gold);
+      font-size: 28px;
+      line-height: 1;
+      margin-right: 14px;
+    }
+
+    /* --------- Utility --------- */
+    .center { text-align: center; }
+    .mt-32 { margin-top: 32px; }
+    .mt-48 { margin-top: 48px; }
+    .mt-64 { margin-top: 64px; }
+    .mb-32 { margin-bottom: 32px; }
+    .gold { color: var(--gold); }
+    .muted-d { color: var(--muted-dark); }
+    .muted-l { color: var(--muted-light); }
+
+    /* --------- Responsive --------- */
+    @media (max-width: 980px) {
+      .wrap { padding: 0 40px; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .wrap { padding: 0 24px; }
+      .sec { padding: 80px 0; }
+      .cover { padding: 32px 24px; }
+      .cover .bottom { flex-direction: column; gap: 20px; align-items: flex-start; }
+      .stat-grid, .stat-grid.cols-3, .stat-grid.cols-2 { grid-template-columns: 1fr; }
+      .h-section { font-size: clamp(36px, 9vw, 54px); margin-bottom: 32px; }
+      footer.deck-footer { padding: 64px 24px; }
+      footer.deck-footer .contact span { display: block; margin: 8px 0; }
+    }
+
+    /* --------- Persistent NDA watermark (visible on every slide) --------- */
+    .nda-watermark {
+      position: fixed;
+      right: 16px;
+      bottom: 12px;
+      z-index: 50;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(201, 176, 107, 0.75);
+      background: rgba(20, 20, 20, 0.55);
+      padding: 6px 10px;
+      border: 1px solid rgba(201, 176, 107, 0.35);
+      border-radius: 2px;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    @media print {
+      .nda-watermark { background: transparent; color: #8E7A47; }
+    }
+    @media (max-width: 640px) {
+      .nda-watermark { font-size: 8px; letter-spacing: 0.22em; padding: 4px 8px; right: 8px; bottom: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Persistent confidentiality watermark, rendered on every slide -->
+  <div class="nda-watermark" aria-hidden="true">CONFIDENTIAL &middot; NUTEX LEADERSHIP ONLY &middot; NOT FOR DISTRIBUTION</div>
+
+  <!-- =========================================================
+       SLIDE INSERTION POINT
+       Slides will be built in subsequent commits per spec.
+       ========================================================= -->
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="deck-footer">
+    <div class="brand">MedMerge</div>
+    <div class="conf">
+      Confidential. For discussion with Nutex Health leadership only. Not for distribution.<br>
+      2026 All Rights Reserved.
+    </div>
+    <div class="contact">
+      <a href="mailto:info@medmerge.co">info@medmerge.co</a>
+      <span>&middot;</span>
+      <a href="tel:+16027770101">602.777.0101</a>
+    </div>
+    <div class="year">Bliksem Holdings / Montana Cell Captive</div>
+  </footer>
+
+</body>
+</html>
