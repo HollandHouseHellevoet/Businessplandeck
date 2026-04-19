@@ -1,0 +1,31 @@
+# =========================================================
+# Netlify build configuration for the Monday slim deck.
+#
+# Scope: this file lives ONLY on the branch claude/monday-slim-deck.
+# It is not present on the branch the existing deckreview.netlify.app
+# site builds from, so the existing site's behavior is unaffected.
+#
+# Purpose: the new Netlify site (suggested name: nutex-preview)
+# points at this branch, serves the repo root, and rewrites "/"
+# to monday.html so the short URL opens the deck directly.
+# =========================================================
+
+[build]
+  publish = "."
+  command = ""
+
+# Serve monday.html at the root URL without changing the address bar.
+# Status 200 = internal rewrite (not a 301/302 redirect).
+[[redirects]]
+  from = "/"
+  to   = "/monday.html"
+  status = 200
+
+# Block search-engine indexing of the preview site with an HTTP header.
+# The <meta name="robots"> tag inside monday.html already covers this,
+# but the header protects sub-paths (e.g. /monday.html, /index.html)
+# against any crawler that does not fetch the body first.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
