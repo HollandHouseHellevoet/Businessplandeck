@@ -1427,9 +1427,37 @@
       footer.deck-footer { padding: 64px 24px; }
       footer.deck-footer .contact span { display: block; margin: 8px 0; }
     }
+
+    /* --------- Persistent NDA watermark (visible on every slide) --------- */
+    .nda-watermark {
+      position: fixed;
+      right: 16px;
+      bottom: 12px;
+      z-index: 50;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(201, 176, 107, 0.75);
+      background: rgba(20, 20, 20, 0.55);
+      padding: 6px 10px;
+      border: 1px solid rgba(201, 176, 107, 0.35);
+      border-radius: 2px;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    @media print {
+      .nda-watermark { background: transparent; color: #8E7A47; }
+    }
+    @media (max-width: 640px) {
+      .nda-watermark { font-size: 8px; letter-spacing: 0.22em; padding: 4px 8px; right: 8px; bottom: 8px; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Persistent NDA watermark, rendered on every slide -->
+  <div class="nda-watermark" aria-hidden="true">Confidential &middot; Under NDA</div>
 
   <!-- =========================================================
        COVER
@@ -1467,9 +1495,9 @@
     <div class="wrap">
       <span class="eyebrow"><span class="roman">I.</span> The 14 Checks</span>
       <div class="rule-gold"></div>
-      <h2 class="h-section">Your hospital writes 14 checks a year<br>to people who do not work for you.</h2>
+      <h2 class="h-section">Your hospitals write 14 checks a year<br>to people who do not work for you.</h2>
       <p class="lede">
-        None of them are physicians. None of them are nurses. All of them collect float, surplus, or commission on money your facility generated.
+        None of them are physicians. None of them are nurses. All of them collect float, surplus, or commission on money your facilities generated.
       </p>
 
       <div class="checks-list">
@@ -1490,7 +1518,7 @@
       </div>
 
       <p class="prose" style="font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted-light);">
-        Representative annual outlay for a physician-owned hospital with 100 to 500 employees.
+        Representative annual outlay per physician-owned hospital with 100 to 500 employees. Multiply by every facility in the system.
       </p>
     </div>
   </section>
@@ -1826,36 +1854,45 @@
       <div class="rule-gold"></div>
       <h2 class="h-section">Physician-owned hospitals<br>are already inside.</h2>
       <p class="lede">
-        One physician-owned hospital, two years inside the structure. The numbers below are real, audited, and available to qualified diligence. Other physician-owned hospitals have followed. They cannot be named in this document. The proof set is growing because the architecture is working. Dutch sits on the board of Physician Led Healthcare for America. The momentum is real.
+        One physician-owned hospital, two years inside the structure. The proof case is audited. Other physician-owned hospitals have followed. None can be named in this document. Dutch sits on the board of Physician Led Healthcare for America. The momentum is real.
       </p>
 
-      <h3 class="h-sub">The proof case.</h3>
+      <h3 class="h-sub">The proof case, at the level this document permits.</h3>
       <div class="stat-grid cols-2">
         <div class="stat">
-          <div class="num">85%</div>
-          <div class="lbl">Specialty Rx Cost Reduction &middot; 3-Year Weighted Average</div>
-          <div class="desc">Pharmacy spend on specialty medications, rebuilt from contract upward. High-cost categories rationalized without changing coverage.</div>
+          <div class="num">Material</div>
+          <div class="lbl">Specialty Rx cost reduction &middot; 3-year weighted</div>
+          <div class="desc">Pharmacy spend on specialty medications, rebuilt from contract upward. Magnitude disclosed under NDA.</div>
         </div>
         <div class="stat">
-          <div class="num">106% &rarr; 10%</div>
-          <div class="lbl">Stop-loss ratio, Year 1 to Year 2</div>
-          <div class="desc">A losing program became a surplus-generating program. Underwriting fundamentals stayed the same. The architecture changed.</div>
+          <div class="num">Inverted</div>
+          <div class="lbl">Stop-loss loss ratio, Year 1 to Year 2</div>
+          <div class="desc">A losing program became a surplus-generating program. Underwriting fundamentals held. The architecture changed.</div>
         </div>
         <div class="stat">
-          <div class="num">$453,798</div>
-          <div class="lbl">Total retained on the balance sheet</div>
-          <div class="desc">Dollars that would have left the hospital under a carrier plan. Held inside the captive cell owned by the physicians.</div>
+          <div class="num">Six figures</div>
+          <div class="lbl">Retained on the physician balance sheet</div>
+          <div class="desc">Dollars that would have left the hospital under a carrier plan. Held inside the cell the physicians own. Exact figure under NDA.</div>
         </div>
         <div class="stat">
-          <div class="num">0%</div>
-          <div class="lbl">Realized renewal increase</div>
-          <div class="desc">Market assumption: 25 percent or more rate increase coming into Year 2. Actual result: a flat-rate pass. Headcount grew, PEPM held or declined.</div>
+          <div class="num">Flat</div>
+          <div class="lbl">Realized renewal</div>
+          <div class="desc">Market assumption was a double-digit rate increase into Year 2. Actual result held flat while headcount grew.</div>
         </div>
+      </div>
+
+      <div style="margin-top: 48px; padding: 28px 32px; border: 1px solid var(--gold); background: rgba(201,176,107,0.06);">
+        <p class="mono" style="font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">
+          Under NDA
+        </p>
+        <p style="font-size: 16px; line-height: 1.65; color: #C7C5BE; margin: 0;">
+          Audited statements, loss triangles, specific percentage moves, dollar-for-dollar retention, and the facility&rsquo;s name are available on request with an executed mutual NDA. We do not publish what physician-owners asked us to protect.
+        </p>
       </div>
 
       <h3 class="h-sub mt-64">The broader trajectory.</h3>
       <p class="prose" style="color:#C7C5BE;">
-        Other physician-owned hospitals have followed. The names sit under NDA. The aggregate is what matters: more facilities inside, more covered lives served, more surplus retained on physician balance sheets every quarter.
+        Other physician-owned hospitals have followed. Names sit under NDA. The aggregate is what matters: more facilities inside, more covered lives served, more surplus retained on physician balance sheets every quarter.
       </p>
 
       <div class="stat-grid cols-3">
@@ -1870,14 +1907,94 @@
           <div class="desc">Employees of physician-owned facilities now inside a captive their physicians own. Growing with each onboarded practice.</div>
         </div>
         <div class="stat">
-          <div class="num">$1M+</div>
+          <div class="num">Seven figures</div>
           <div class="lbl">Surplus retained to date</div>
-          <div class="desc">Aggregate captive surplus held on physician balance sheets across the live book. Compounds with every claim that does not happen.</div>
+          <div class="desc">Aggregate captive surplus held on physician balance sheets across the live book. Specific figure disclosed under NDA.</div>
         </div>
       </div>
 
       <p class="prose mt-48" style="color:#C7C5BE;">
         These numbers look like the numbers in your own books. Same cost categories. Same patient demographics. Same insurance market. The only variable that changed is who owns the surplus.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 6-A: AGGREGATE PREMIUM OUTLAY (for multi-facility systems)
+       ========================================================= -->
+  <section class="sec light">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">VI-A.</span> Aggregate Premium Outlay</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">For a system of your size,<br>the annual premium outlay is&nbsp;material.</h2>
+      <p class="lede">
+        Premium is a function of headcount, facility count, and line mix. Start with the health plan. A 900-employee health plan, built on the bespoke fee schedule and routed through the ASO rails, is the anchor. Medical malpractice, property and casualty, and workers&rsquo; compensation stack on top. Aggregated across the facilities in the system, the annual outlay sits in a measurable band.
+      </p>
+
+      <div class="stat-grid cols-2">
+        <div class="stat">
+          <div class="num">$43M &ndash; $56M</div>
+          <div class="lbl">Aggregate annual premium outlay, representative system</div>
+          <div class="desc">Across the 14 check categories for a multi-facility physician-owned system comparable in scale to the audience for this document. Exact pro&nbsp;formas run under NDA.</div>
+        </div>
+        <div class="stat">
+          <div class="num">900 EEs</div>
+          <div class="lbl">Health plan anchor build</div>
+          <div class="desc">Self-funded ERISA plan adjudicating through Aetna, UMR, or Meritain with the bespoke fee schedule loaded. Largest single check in the stack. First captive cell filled.</div>
+        </div>
+      </div>
+
+      <p class="prose mt-48">
+        Today, every one of those dollars leaves the system. The captive architecture does not increase the outlay. It redirects the surplus.
+      </p>
+
+      <p class="prose" style="font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted-light); margin-top: 32px;">
+        Illustrative band. Line-by-line build delivered under NDA against actual census and loss history.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 6-B: FOUR-YEAR TRAJECTORY
+       ========================================================= -->
+  <section class="sec dark">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">VI-B.</span> Four-Year Trajectory</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">The outlay triples<br>over four years.</h2>
+      <p class="lede">
+        Year 1 stands up the health plan and fills Captive I. Year 2 activates property and casualty. Years 3 and 4 layer in medical malpractice and blend in additional facilities across the system. The total premium routed through physician-owned structures compounds on two axes at once: facility count and line coverage.
+      </p>
+
+      <div class="stat-grid cols-2" style="margin-top: 48px;">
+        <div class="stat">
+          <div class="num">Year 1</div>
+          <div class="lbl">Health plan stood up</div>
+          <div class="desc">Anchor facility onboarded. Captive I live. Premium routed to the physician-owned cell. Baseline aggregate outlay established.</div>
+        </div>
+        <div class="stat">
+          <div class="num">Year 2</div>
+          <div class="lbl">P&amp;C activates</div>
+          <div class="desc">Captive II reserves and writes. Additional facilities in the system begin onboarding. Outlay roughly doubles against Year&nbsp;1 baseline.</div>
+        </div>
+        <div class="stat">
+          <div class="num">Year 3</div>
+          <div class="lbl">Medical malpractice begins</div>
+          <div class="desc">Captive III activates once the operating book has two years of credibility. Reinsurance-heavy in first year of retention.</div>
+        </div>
+        <div class="stat">
+          <div class="num">Year 4</div>
+          <div class="lbl">System-wide blend</div>
+          <div class="desc">Aggregate outlay approximately three times the Year 1 baseline as the majority of facilities in the system sit inside the three cells.</div>
+        </div>
+      </div>
+
+      <p class="prose mt-48" style="color:#C7C5BE;">
+        Same premium dollars. Different destinations. The trajectory is a function of onboarding sequence, not market timing.
+      </p>
+
+      <p class="prose" style="font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted-dark); margin-top: 32px;">
+        Sequencing and capital deployment modeled against your system under NDA.
       </p>
     </div>
   </section>
@@ -1896,6 +2013,10 @@
 
       <p class="prose" style="font-size: 16px; margin-bottom: 32px; border-left: 2px solid var(--gold-ink); padding-left: 24px;">
         This is a homogeneous captive, built exclusively for healthcare professionals: physician-owned hospitals and medical practices with fifty or more employees. Member selection is the moat. Every participant shares the same risk profile, the same operating posture, and the same regulatory horizon. Not a generic group captive. The homogeneity is the product.
+      </p>
+
+      <p class="prose" style="font-size: 16px; margin-bottom: 32px; border-left: 2px solid var(--gold-ink); padding-left: 24px;">
+        Read this section against a 27-facility system. Every line below scales on facility count. Capital requirements compound less than linearly once the health plan cell is live; surplus retained compounds more than linearly as credibility builds across the book. A 27-facility operator is not a member of this captive &mdash; at that scale, the captive is a purpose-built cell for the system, with additional facilities invited in on the operator&rsquo;s terms.
       </p>
 
       <p class="prose" style="font-size: clamp(18px, 1.6vw, 22px); line-height: 1.45; font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; color: #1A1A1A; margin: 40px 0 24px; max-width: 880px;">
@@ -2339,12 +2460,69 @@
   </section>
 
   <!-- =========================================================
+       SECTION: NEXT STEPS — explicit NDA ask as meeting CTA
+       ========================================================= -->
+  <section class="sec light">
+    <div class="wrap">
+      <span class="eyebrow"><span class="roman">&rarr;</span> Next Steps</span>
+      <div class="rule-gold"></div>
+      <h2 class="h-section">What we are asking for<br>out of this meeting.</h2>
+      <p class="lede">
+        One ask. Execute a mutual NDA. Everything meaningful &mdash; the audited proof case, the named facilities, the pro formas run against your census, the sequencing of cells, the capital calls &mdash; sits behind that signature.
+      </p>
+
+      <div class="priority-stack" style="margin-top: 40px;">
+        <div class="priority-card" style="background: var(--light-card);">
+          <div class="priority-head">
+            <span class="priority-num">1</span>
+            <span class="priority-tag">Step 1</span>
+          </div>
+          <div>
+            <h3 class="priority-title" style="color: var(--text-on-light);">Execute the mutual NDA.</h3>
+            <p class="priority-body" style="color: #3A3832;">
+              Standard two-way. We send the draft the day of this meeting. It protects your facility names, census, loss history, and balance-sheet detail in the same stroke that it protects ours.
+            </p>
+          </div>
+        </div>
+        <div class="priority-card" style="background: var(--light-card);">
+          <div class="priority-head">
+            <span class="priority-num">2</span>
+            <span class="priority-tag">Step 2</span>
+          </div>
+          <div>
+            <h3 class="priority-title" style="color: var(--text-on-light);">Receive the diligence pack.</h3>
+            <p class="priority-body" style="color: #3A3832;">
+              Audited proof case. Named facilities inside the live book. Loss triangles. Stop-loss outcome. Retention figures. Pro&nbsp;formas priced against your system&rsquo;s census and loss data.
+            </p>
+          </div>
+        </div>
+        <div class="priority-card" style="background: var(--light-card);">
+          <div class="priority-head">
+            <span class="priority-num">3</span>
+            <span class="priority-tag">Step 3</span>
+          </div>
+          <div>
+            <h3 class="priority-title" style="color: var(--text-on-light);">Working session.</h3>
+            <p class="priority-body" style="color: #3A3832;">
+              Dutch and counsel, your operating team, two hours. Cell structure, capital deployment, onboarding sequence across the 27-facility footprint, and a written term sheet out of the room.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="prose mt-48" style="font-size: 18px;">
+        The deck you are reading tells you what we are comfortable putting on paper without protection. The conversation behind the NDA is the one that closes.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
        SECTION (unnumbered): THE CLOSE — final slide before the Appendix
        ========================================================= -->
   <section class="sec dark close-section">
     <div class="wrap close-wrap">
       <h2 class="close-headline">
-        You built the hospital.<br>
+        You built the hospitals.<br>
         You earned the patients.<br>
         <span class="close-q">Why does someone else<br>own the economics?</span>
       </h2>
@@ -2409,6 +2587,9 @@
     <div class="brand">MedMerge</div>
     <div class="conf">
       Confidential. Covered by Non-Disclosure Agreement.<br>
+      Every figure in this deck is representative or illustrative.<br>
+      Audited numbers, facility names, and line-by-line pro formas<br>
+      are released only under an executed mutual NDA.<br>
       2026 All Rights Reserved.
     </div>
     <div class="contact">
